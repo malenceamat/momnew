@@ -19,7 +19,13 @@
         .col {
             min-width: auto;
         }
+        .create-post {
+            border: solid 1px silver;
+            border-radius: 10px;
+            text-align: center;
+        }
     </style>
+
     <!--  END CUSTOM STYLE FILE  -->
 </head>
 <body class="sidebar-noneoverflow" data-spy="scroll" data-target="#navSection" data-offset="140">
@@ -45,16 +51,30 @@
 
         {{--  Форма отправки текста--}}
 
-        <div class="container">
+     {{--   <div class="container">
 
-            <form method="POST" action="">
+            <form method="get" action="">
                 <input name="name" type="text" placeholder="Имя"/>
                 <input name="text" type="text" placeholder="Текст"/>
                 <input type="submit" value="Отправить"/>
             </form>
-        </div>
+        </div>--}}
 
-
+<div class="container">
+    <br>
+    <div class="create-post">
+        <h5>Create Post</h5>
+        <form action="" method="post">
+            @csrf
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="what do u think?" name="body">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-success">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 
         {{--Форма отправки изображения--}}
