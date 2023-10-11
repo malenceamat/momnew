@@ -64,10 +64,12 @@
     <br>
     <div class="create-post">
         <h5>Create Post</h5>
-        <form action="" method="post">
+        <form action="/post" method="post">
             @csrf
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="what do u think?" name="body">
+
+                    <input type="text" class="form-control" placeholder="what do u think?" name="body">
+
                 <div class="input-group-append">
                     <button type="submit" class="btn btn-success">Send</button>
                 </div>
@@ -77,7 +79,55 @@
 </div>
 
 
-        {{--Форма отправки изображения--}}
+    <div class="container mt-5">
+
+        @if(session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
+
+        <div class="card">
+
+            <div class="card-header text-center font-weight-bold">
+                <h2> Upload Image </h2>
+            </div>
+
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data" id="upload-image" action="{{ url('save') }}" >
+                        @csrf
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="file" name="image" placeholder="Выбрать изображение" id="image">
+                                @error('image')
+                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary" id="submit">Отправить</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    {{--Форма отправки изображения--}}
         <div class="container">
 
         <form method="post" action="/save_reviews.php">
