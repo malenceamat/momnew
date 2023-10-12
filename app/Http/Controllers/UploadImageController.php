@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Photo;
 use Illuminate\Http\Request;
 
 
@@ -26,6 +27,12 @@ class UploadImageController extends Controller
 
         $path = $request->file('image')->store('public/images');
 
+        $save = new Photo;
+
+        $save->name = $name;
+        $save->path = $path;
+
+        $save->save();
 
 
 

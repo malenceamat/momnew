@@ -14,10 +14,10 @@ use App\Http\Controllers\UploadImageController;
 */
 
 Route::get('/', function () {
-    return view('admin');
+    return view('content');
 });
 
-Route::get('/admin123', function () {
+Route::get('/admin', function () {
     return view('admin');
 })->middleware(['auth'])->name('dashboard');
 

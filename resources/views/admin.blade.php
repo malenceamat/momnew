@@ -40,118 +40,115 @@
 
 @include('admin.sidebar')
 
-    <!--  BEGIN CONTENT AREA  -->
-    <div id="content" class="main-content">
 
+
+
+
+
+
+
+
+<div id="content" class="main-content">
+
+        <div class="container mt-5">
+
+
+
+            <div class="card">
+
+                <div class="card-header text-center font-weight-bold">
+                    <h2> Upload Image </h2>
+                </div>
+
+                <div class="card-body">
+                    <form method="POST" enctype="multipart/form-data" id="upload-image" action="{{ url('save') }}" >
+                        @csrf
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="file" name="image" placeholder="Выбрать изображение" id="image">
+                                    @error('image')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mb-2">
+                                <img id="preview-image-before-upload" src="/images/product_image_not_found.gif"
+                                     alt="preview image" style="max-height: 250px;">
+                            </div>
+
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary" id="submit">Отправить</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function (e) {
+
+
+            $('#image').change(function(){
+
+                let reader = new FileReader();
+
+                reader.onload = (e) => {
+
+                    $('#preview-image-before-upload').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(this.files[0]);
+
+            });
+
+        });
+
+    </script>
 
         </div>
 
 
 
 
-        {{--  Форма отправки текста--}}
 
-     {{--   <div class="container">
 
-            <form method="get" action="">
-                <input name="name" type="text" placeholder="Имя"/>
-                <input name="text" type="text" placeholder="Текст"/>
-                <input type="submit" value="Отправить"/>
-            </form>
-        </div>--}}
 
-<div class="container">
-    <br>
-    <div class="create-post">
-        <h5>Create Post</h5>
-        <form action="/post" method="post">
-            @csrf
-            <div class="input-group mb-3">
+    <div class="container">
+        <br>
+        <div class="create-post">
+            <h5>Create Post</h5>
+            <form action="/post" method="post">
+                @csrf
+                <div class="input-group mb-3">
 
                     <input type="text" class="form-control" placeholder="what do u think?" name="body">
 
-                <div class="input-group-append">
-                    <button type="submit" class="btn btn-success">Send</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
-
-    <div class="container mt-5">
-
-        @if(session('status'))
-            <div class="alert alert-success">
-                {{ session('status') }}
-            </div>
-        @endif
-
-        <div class="card">
-
-            <div class="card-header text-center font-weight-bold">
-                <h2> Upload Image </h2>
-            </div>
-
-            <div class="card-body">
-                <form method="POST" enctype="multipart/form-data" id="upload-image" action="{{ url('save') }}" >
-                        @csrf
-                    <div class="row">
-
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <input type="file" name="image" placeholder="Выбрать изображение" id="image">
-                                @error('image')
-                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary" id="submit">Отправить</button>
-                        </div>
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-success">Send</button>
                     </div>
-                </form>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-
-
-    {{--Форма отправки изображения--}}
-        <div class="container">
-
-        <form method="post" action="/save_reviews.php">
-            <h3>Отправить отзыв:</h3>
-            <div class="form-row">
-                <label>Ваше имя:</label>
-                <input type="text" name="name" required>
-            </div>
-            <div class="form-row">
-                <label>Комментарий:</label>
-                <input type="text" name="text" required>
-            </div>
-            <div class="form-row">
-                <label>Изображения:</label>
-                <div class="img-list" id="js-file-list"></div>
-                <input id="js-file" type="file" name="file[]" multiple accept=".jpg,.jpeg,.png,.gif">
-            </div>
-            <div class="form-submit">
-                <input type="submit" name="send" value="Отправить">
-            </div>
-        </form>
+                </div>
+            </form>
         </div>
     </div>
-        <!--  END CONTENT AREA  -->
+
+
+
+
+
+
+
+
+
+
 
 
 <!-- END MAIN CONTAINER -->
