@@ -28,7 +28,9 @@ Route::post('/post', [PostController::class, 'Submit']);
 Route::get('upload-image', [UploadImageController::class, 'index']);
 Route::post('save', [UploadImageController::class, 'save']);
 
-
+Route::get('/admin1', function () {
+    return view('admin1');
+});
 
 
 

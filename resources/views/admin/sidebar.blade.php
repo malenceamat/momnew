@@ -4,7 +4,7 @@
 
         <ul class="navbar-nav theme-brand flex-row  text-center">
             <li class="nav-item theme-text">
-                <a href="/admin1" class="nav-link"> CORK </a>
+                <a href="/admin1" class="nav-link"> admin panel? </a>
 
             </li>
             <li class="nav-item toggle-sidebar">
@@ -16,7 +16,7 @@
                 <a href="#elements" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                        <span>Elements</span>
+                        <span>Главная страница</span>
                     </div>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
@@ -24,19 +24,19 @@
                 </a>
                 <ul class="collapse submenu recent-submenu mini-recent-submenu list-unstyled show" id="elements" data-parent="#accordionExample">
                     <li>
-                        <a href="element_alerts.html"> Alerts </a>
+                        <a href="element_alerts.html"> слайдер </a>
                     </li>
                     <li>
-                        <a href="element_avatar.html"> Avatar </a>
+                        <a href="element_avatar.html"> баннер </a>
                     </li>
                     <li>
-                        <a href="element_badges.html"> Badges </a>
+                        <a href="element_badges.html"> текст </a>
                     </li>
                     <li>
-                        <a href="element_breadcrumbs.html"> Breadcrumbs </a>
+                        <a href="element_breadcrumbs.html"> картинка </a>
                     </li>
                     <li>
-                        <a href="element_buttons.html"> Buttons </a>
+                        <a href="element_buttons.html"> кнопочки </a>
                     </li>
                 </ul>
             </li>
