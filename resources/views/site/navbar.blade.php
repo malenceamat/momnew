@@ -11,18 +11,7 @@
         <!-- /.navbar-header -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="current dropdown"><a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown">Home <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="index.html">Home Layout 1</a></li>
-                        <li><a href="index2.html">Home Layout 2</a></li>
-                        <li><a href="index3.html">Home Layout 3</a></li>
-                        <li><a href="index4.html">Home Layout 4</a></li>
-                        <li><a href="index5.html">Home Layout 5</a></li>
-                        <li><a href="index-all.html">Home Layout All</a></li>
-                        <li><a href="animation.html">Scroll Animation</a></li>
-                        <li><a href="onepage.html">Onepage Layout</a></li>
-                    </ul>
-                </li>
+
                 <li class="dropdown"><a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown">Sliders <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="slider.html">Fullscreen Slider</a></li>
@@ -76,14 +65,8 @@
                 <li class="dropdown"><a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown">Features <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="elements.html">Elements</a></li>
-                        <li><a href="charts.html">Charts</a></li>
-                        <li><a href="pricing.html">Pricing Tables</a></li>
-                        <li><a href="headings.html">Headings</a></li>
-                        <li><a href="disqus.html">Disqus</a></li>
-                        <li><a href="icon-lulu.html">Lulu Icons</a></li>
-                        <li><a href="icon-budicon.html">Budicon Icons</a></li>
-                        <li><a href="icon-fontello.html">Fontello Icons</a></li>
-                    </ul>
+
+
                 </li>
             </ul>
             <!-- /.navbar-nav -->

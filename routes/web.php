@@ -14,7 +14,7 @@ use App\Http\Controllers\UploadImageController;
 */
 
 Route::get('/', function () {
-    return view('content');
+    return view('admin');
 });
 
 Route::get('/admin', function () {
@@ -27,6 +27,9 @@ Route::post('/post', [PostController::class, 'Submit']);
 
 Route::get('upload-image', [UploadImageController::class, 'index']);
 Route::post('save', [UploadImageController::class, 'save']);
+
+
+
 
 
 
