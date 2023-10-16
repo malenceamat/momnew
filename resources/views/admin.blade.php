@@ -16,13 +16,38 @@
     <!--  BEGIN CUSTOM STYLE FILE  -->
     <link href="assets/css/elements/color_library.css" rel="stylesheet" type="text/css" />
     <style>
-        .col {
-            min-width: auto;
-        }
-        .create-post {
-            border: solid 1px silver;
-            border-radius: 10px;
-            text-align: center;
+        .component-card_1 {
+            border: 1px solid #e0e6ed;
+            border-radius: 6px;
+            width: 19rem;
+            margin: 0 auto;
+            box-shadow: 4px 6px 10px -3px #bfc9d4; }
+        .component-card_1 .card-body {
+            padding: 28px 25px; }
+        .component-card_1 .icon-svg {
+            margin-bottom: 20px;
+            display: inline-block;
+            background: #3b3f5c;
+            padding: 12px;
+            border-radius: 50%;
+            color: #f1f2f3; }
+        .component-card_1 svg {
+            width: 20px;
+            height: 20px; }
+        .component-card_1 .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 15px; }
+        .component-card_1 .card-text {
+            color: #888ea8; }
+
+        .component-card_1 {
+            border: 1px solid #e0e6ed;
+            border-radius: 6px;
+            width: 19rem;
+            margin:20px;
+            box-shadow: 4px 6px 10px -3px #bfc9d4;
         }
     </style>
 
@@ -38,7 +63,7 @@
 
 
 
-@include('admin.sidebar')
+    @include('admin.sidebar')
 
 
 
@@ -46,178 +71,100 @@
 
 
 
+    <div id="content" class="main-content">
 
 
-<div id="content" class="main-content">
+
+
+
 
         <div class="container mt-5">
 
-
-
-            <div class="card">
-
-                <div class="card-header text-center font-weight-bold">
-                    <h2> Upload Image </h2>
-                </div>
-
-                <div class="card-body">
-                    <form method="POST" enctype="multipart/form-data" id="upload-image" action="{{ url('save') }}" >
-                        @csrf
-                        <div class="row">
-
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="file" name="image" placeholder="Выбрать изображение" id="image">
-                                    @error('image')
-                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="col-md-12 mb-2">
-                                <img id="preview-image-before-upload" src="/images/product_image_not_found.gif"
-                                     alt="preview image" style="max-height: 250px;">
-                            </div>
-
-                            <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary" id="submit">Отправить</button>
-                            </div>
-                        </div>
-                    </form>
-
-                </div>
-
-            </div>
-
-
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-    <script type="text/javascript">
-
-        $(document).ready(function (e) {
-
-
-            $('#image').change(function(){
-
-                let reader = new FileReader();
-
-                reader.onload = (e) => {
-
-                    $('#preview-image-before-upload').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(this.files[0]);
-
-            });
-
-        });
-
-    </script>
-
         </div>
-
-
-    <div class="container mt-5">
-
-
-
         <div id="card_1" class="col-lg-12 layout-spacing layout-top-spacing">
             <div class="statbox widget box box-shadow">
-
                 <div class="widget-content widget-content-area">
 
-                    <div class="card component-card_1">
-                        <div class="card-body">
-                            <div class="icon-svg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-droplet"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                    <div class="row">
+
+
+                        <div class="card component-card_1">
+                            <div class="card-body">
+                                <div class="icon-svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-droplet"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                                </div>
+                                <h5 class="card-title">slider</h5>
+                                <p class="card-text">Mauris nisi felis, placerat in volutpat id, varius et sapien.</p>
                             </div>
-                            <h5 class="card-title">Simple</h5>
-                            <p class="card-text">Mauris nisi felis, placerat in volutpat id, varius et sapien.</p>
                         </div>
+
+                        <div class="card component-card_1">
+                            <div class="card-body">
+                                <div class="icon-svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-droplet"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                                </div>
+                                <h5 class="card-title">banner</h5>
+                                <p class="card-text">Mauris nisi felis, placerat in volutpat id, varius et sapien.</p>
+                            </div>
+                        </div>
+                        <div class="card component-card_1">
+                            <div class="card-body">
+                                <div class="icon-svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-droplet"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                                </div>
+                                <h5 class="card-title">text</h5>
+                                <p class="card-text">Mauris nisi felis, placerat in volutpat id, varius et sapien.</p>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="card component-card_1">
+                            <div class="card-body">
+                                <div class="icon-svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-droplet"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                                </div>
+                                <h5 class="card-title">image</h5>
+                                <p class="card-text">Mauris nisi felis, placerat in volutpat id, varius et sapien.</p>
+                            </div>
+                        </div>
+
+                        <div class="card component-card_1">
+                            <div class="card-body">
+                                <div class="icon-svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-droplet"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                                </div>
+                                <h5 class="card-title">buttons</h5>
+                                <p class="card-text">Mauris nisi felis, placerat in volutpat id, varius et sapien.</p>
+                            </div>
+                        </div>
+
+
                     </div>
 
-                    <div class="card component-card_1">
-                        <div class="card-body">
-                            <div class="icon-svg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-droplet"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
-                            </div>
-                            <h5 class="card-title">Simple</h5>
-                            <p class="card-text">Mauris nisi felis, placerat in volutpat id, varius et sapien.</p>
-                        </div>
-                    </div>
-                    </div>
+
+
+
 
                 </div>
+
             </div>
         </div>
-
-
-
     </div>
 
 
 
-                    <div class="card component-card_1">
-                        <div class="card-body">
-                            <div class="icon-svg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-droplet"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
-                            </div>
-                            <h5 class="card-title">Simple</h5>
-                            <p class="card-text">Mauris nisi felis, placerat in volutpat id, varius et sapien.</p>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div class="card-body">
-                            <div class="icon-svg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-droplet"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
-                            </div>
-                            <h5 class="card-title">Simple</h5>
-                            <p class="card-text">Mauris nisi felis, placerat in volutpat id, varius et sapien.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-
-
-    </div>
-
-
-
-
-    <div class="container">
-        <br>
-        <div class="create-post">
-            <h5>Create Post</h5>
-            <form action="/post" method="post">
-                @csrf
-                <div class="input-group mb-3">
-
-                    <input type="text" class="form-control" placeholder="what do u think?" name="body">
-
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-success">Send</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
+</div>
 
 
 
 
 
 
-
-
-
-
-
-
-<!-- END MAIN CONTAINER -->
+</div>
+</div>
 
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <script src="assets/js/libs/jquery-3.1.1.min.js"></script>

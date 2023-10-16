@@ -28,15 +28,26 @@ Route::post('/post', [PostController::class, 'Submit']);
 Route::get('upload-image', [UploadImageController::class, 'index']);
 Route::post('save', [UploadImageController::class, 'save']);
 
-Route::get('/admin1', function () {
-    return view('admin1');
+Route::get('/admin', function () {
+    return view('admin');
 });
 
+Route::get('/slider', function () {
+    return view('slider');
+});
 
+Route::get('/banner', function () {
+    return view('banner');
+});
 
+Route::get('/text', function () {
+    return view('text');
+});
 
+Route::get('/image', function () {
+    return view('image');
+});
 
-
-
-
-
+Route::get('/buttons', function () {
+    return view('buttons');
+});

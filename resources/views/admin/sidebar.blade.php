@@ -4,7 +4,7 @@
 
         <ul class="navbar-nav theme-brand flex-row  text-center">
             <li class="nav-item theme-text">
-                <a href="/admin1" class="nav-link"> admin panel? </a>
+                <a href="/admin" class="nav-link"> admin panel? </a>
 
             </li>
             <li class="nav-item toggle-sidebar">
@@ -24,19 +24,19 @@
                 </a>
                 <ul class="collapse submenu recent-submenu mini-recent-submenu list-unstyled show" id="elements" data-parent="#accordionExample">
                     <li>
-                        <a href="element_alerts.html"> слайдер </a>
+                        <a href="/slider"> слайдер </a>
                     </li>
                     <li>
-                        <a href="element_avatar.html"> баннер </a>
+                        <a href="/banner"> баннер </a>
                     </li>
                     <li>
-                        <a href="element_badges.html"> текст </a>
+                        <a href="/text"> текст </a>
                     </li>
                     <li>
-                        <a href="element_breadcrumbs.html"> картинка </a>
+                        <a href="/image"> картинка </a>
                     </li>
                     <li>
-                        <a href="element_buttons.html"> кнопочки </a>
+                        <a href="/buttons"> кнопочки </a>
                     </li>
                 </ul>
             </li>
