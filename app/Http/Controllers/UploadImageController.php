@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Photo;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 
 class UploadImageController extends Controller
@@ -36,7 +36,18 @@ class UploadImageController extends Controller
 
 
 
-        return redirect('upload-image')->with('status', 'Изображение было загружено');
+        $photos = Photo::all();
+        return view('slider', ['photos' => $photos])->with('status', 'Изображение было загружено');
 
     }
+
+    public function slider()
+
+    {
+
+
+        $photos = Photo::all();
+        return view('slider', ['photos' => $photos])->with('status', 'Изображение было загружено');
+    }
+
 }

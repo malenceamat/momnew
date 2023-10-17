@@ -52,9 +52,7 @@ Route::get('/buttons', function () {
     return view('buttons');
 });
 
-/*Route::get('/', function () {
-    $post = App\Http\Controllers\PostController::all();
-    return view('image', compact('post'));
-});*/
 
-Route::get('/slider', 'PostController@allData')->name('test');
+
+Route::get('/post', [PostController::class, 'index']);
+Route::get('/slider', [UploadImageController::class, 'slider']);

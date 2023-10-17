@@ -67,7 +67,7 @@
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="file" name="image" placeholder="Выбрать изображение" id="image">
+                                    <input type="file" name="image" placeholder="Выбрать изображение" id="image" src="/">
                                     @error('image')
                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                     @enderror
@@ -76,12 +76,17 @@
 
                             <div class="col-md-12 mb-2">
                                 <img id="preview-image-before-upload" src="/images/product_image_not_found.gif"
-                                     alt="preview image" style="max-height: 250px;">
+                                     alt="" style="max-height: 250px;">
                             </div>
 
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-primary" id="submit">Отправить</button>
                             </div>
+                            @foreach($photos as $ph)
+                                {{$ph['name']}}
+                                {{$ph['path']}}
+                                <img src="{{asset('/'. $ph['path'])}}" class="d-block w-100" alt="...">
+                            @endforeach
                         </div>
                     </form>
 
@@ -117,9 +122,9 @@
         </div>
 
 
+            {{--CREATE POST--}}
 
-
-        <div class="container">
+        {{--<div class="container">
             <br>
             <div class="create-post">
                 <h5>Create Post</h5>
@@ -135,39 +140,37 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div>--}}
 
 
+
+
+           {{-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src='' class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            </div>--}}
 
 
 </div>
 
 
-{{--
-<div class="container mt-5">
-
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-             <img src='DB::' class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="@foreach() @endforeach" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="/storage/app/public/images" class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Предыдущий</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Следующий</span>
-        </button>
-    </div>
-</div>--}}
 
 
 
