@@ -119,7 +119,7 @@
 
 
 
-       {{-- <div class="container">
+        <div class="container">
             <br>
             <div class="create-post">
                 <h5>Create Post</h5>
@@ -135,7 +135,7 @@
                     </div>
                 </form>
             </div>
-        </div>--}}
+        </div>
 
 
 
