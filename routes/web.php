@@ -14,7 +14,7 @@ use App\Http\Controllers\UploadImageController;
 */
 
 Route::get('/', function () {
-    return view('admin');
+    return view('content');
 });
 
 Route::get('/admin', function () {

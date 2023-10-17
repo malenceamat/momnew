@@ -4,14 +4,13 @@
 
 
 @section('content')
-
-    @include('contact.about')
+    @include('contact.banner')
     @include('contact.news')
     @include('contact.photo')
     @include('contact.possibilities')
-    @include('contact.process')
     @include('contact.video')
-    @include('contact.banner')
+    @include('contact.about')
+    @include('contact.process')
     @include('contact.gallery')
 
 @endsection
