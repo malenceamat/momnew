@@ -24,7 +24,7 @@ class UploadImageController extends Controller
 
         ]);
 
-        $path = Storage::put('/image', $request->file('image'));
+        $path = Storage::put('image', $request->file('image'));
         $name = $request->file('image')->getClientOriginalName();
 
         $path = $request->file('image')->store('image');
