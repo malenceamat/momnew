@@ -85,7 +85,7 @@
                             @foreach($photos as $ph)
                                 {{$ph['name']}}
                                 {{$ph['path']}}
-                                <img src="{{asset('/'. $ph['path'])}}" class="d-block w-100" alt="...">
+                                <img src="{{asset('/storage/'. $ph['path'])}}" class="d-block w-100" alt="...">
                             @endforeach
                         </div>
                     </form>
@@ -202,4 +202,7 @@
 <!-- END PAGE LEVEL SCRIPTS -->
 </body>
 </html>
+
+
+
 

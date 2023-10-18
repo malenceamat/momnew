@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 
 class UploadImageController extends Controller
@@ -23,9 +24,11 @@ class UploadImageController extends Controller
 
         ]);
 
+        $path = Storage::put('/image', $request->file('image'));
         $name = $request->file('image')->getClientOriginalName();
 
-        $path = $request->file('image')->store('public/images');
+        $path = $request->file('image')->store('image');
+        /*dd($request->file('image'));*/
 
         $save = new Photo;
 
