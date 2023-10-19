@@ -31,7 +31,7 @@ class UploadImageController extends Controller
         /*dd($request->file('image'));*/
 
         $save = new Photo;
-
+        /*Photo::where('path', 'value')->first();*/
         $save->name = $name;
         $save->path = $path;
 
@@ -42,6 +42,7 @@ class UploadImageController extends Controller
         $photos = Photo::all();
         return view('slider', ['photos' => $photos])->with('status', 'Изображение было загружено');
 
+
     }
 
     public function slider()
@@ -51,6 +52,9 @@ class UploadImageController extends Controller
 
         $photos = Photo::all();
         return view('slider', ['photos' => $photos])->with('status', 'Изображение было загружено');
+
     }
+
+
 
 }

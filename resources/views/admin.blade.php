@@ -49,6 +49,9 @@
             margin:20px;
             box-shadow: 4px 6px 10px -3px #bfc9d4;
         }
+
+
+
     </style>
 
     <!--  END CUSTOM STYLE FILE  -->
@@ -64,6 +67,7 @@
 
 
     @include('admin.sidebar')
+
 
 
 
@@ -152,6 +156,8 @@
 
             </div>
         </div>
+
+
     </div>
 
 
@@ -163,8 +169,7 @@
 
 
 
-</div>
-</div>
+
 
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <script src="assets/js/libs/jquery-3.1.1.min.js"></script>

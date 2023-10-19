@@ -11,6 +11,7 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/scrollspyNav.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//unpkg.com/a11y-slider@latest/dist/a11y-slider.css" />
     <!-- END GLOBAL MANDATORY STYLES -->
 
     <!--  BEGIN CUSTOM STYLE FILE  -->
@@ -24,7 +25,19 @@
             border-radius: 10px;
             text-align: center;
         }
+
+        .slider {
+            display: flex;
+        }
+
+        .slider > * {
+            width: 100%;
+            flex: 0 0 auto;
+        }
     </style>
+
+
+
 
     <!--  END CUSTOM STYLE FILE  -->
 </head>
@@ -38,6 +51,20 @@
 
 
 
+<div class="slider">
+    <ul class="slider">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul></div>
+    <script>
+        const slider = new A11YSlider(document.querySelector('.slider'), {
+            adaptiveHeight: true,
+            dots: false
+        });
+    </script>
+
     @include('admin.sidebar')
 
 
@@ -48,7 +75,12 @@
 
 
 
+
+
+
     <div id="content" class="main-content">
+
+
 
         <div class="container mt-5">
 
@@ -82,17 +114,20 @@
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-primary" id="submit">Отправить</button>
                             </div>
-                            @foreach($photos as $ph)
+                          {{--  @foreach($photos as $ph)
                                 {{$ph['name']}}
                                 {{$ph['path']}}
                                 <img src="{{asset('/storage/'. $ph['path'])}}" class="d-block w-100" alt="...">
-                            @endforeach
+                            @endforeach--}}
                         </div>
                     </form>
 
                 </div>
 
             </div>
+
+
+
 
 
             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -177,9 +212,6 @@
 
 
 
-
-
-
 <!-- END MAIN CONTAINER -->
 
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
@@ -188,7 +220,7 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 <script src="assets/js/app.js"></script>
-
+    <script src="//unpkg.com/a11y-slider@latest/dist/a11y-slider.js"></script>
 <script>
     $(document).ready(function() {
         App.init();
