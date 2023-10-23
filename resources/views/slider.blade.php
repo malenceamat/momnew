@@ -95,6 +95,8 @@
 
 
 
+
+
             <div class="card">
 
                 <div class="card-header text-center font-weight-bold">
@@ -108,7 +110,9 @@
 
                             <div class="col-md-12">
                                 <div class="form-group">
+                                    <label class="file">
                                     <input type="file" name="image" placeholder="Выбрать изображение" id="image" src="/">
+                                    </label>
                                     @error('image')
                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                     @enderror
@@ -130,6 +134,73 @@
                             @endforeach--}}
                         </div>
                     </form>
+                        <div class="row">
+
+                            <div class="container">
+
+                                <div class="create-post">
+                                    <h5>Text</h5>
+
+
+                                    <form action="" method="post">
+                                        @csrf
+                                        <div class="input-group mb-3">
+
+                                            <input type="text" class="form-control" placeholder="Текст кнопок" name="buttonstext">
+
+                                            <div class="input-group-append">
+                                                <button type="submit" class="btn btn-success">Отправить</button>
+                                            </div>
+                                        </div>
+
+                                </div>
+                            </div>
+
+                            <div class="container mt-3">
+
+                                <div class="create-post">
+                                    <h5>Small Text</h5>
+
+
+                                        <div class="input-group mb-3">
+
+                                            <input type="text" class="form-control" placeholder="Вспомогательный текст" name="helptext">
+                                            @csrf
+                                            <div class="input-group-append">
+                                                <button type="submit" class="btn btn-success">Отправить</button>
+                                            </div>
+                                        </div>
+
+                                </div>
+                            </div>
+
+                            <div class="container mt-3">
+                                <div class="create-post">
+                                    <h5> Text</h5>
+
+                                    @csrf
+                                    <div class="input-group mb-3">
+
+                                        <input type="text" class="form-control" placeholder="Основной текст" name="body">
+
+                                        <div class="input-group-append">
+                                            <button type="submit" class="btn btn-success">Отправить</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+
+
+
+
+
 
                 </div>
 
@@ -169,68 +240,11 @@
 
 
             {{--CREATE POST--}}
-<div class="row">
-        <div class="container">
-
-            <div class="create-post">
-                <h5>Text</h5>
-                <form action="/post" method="post">
-                    @csrf
-                    <div class="input-group mb-3">
-
-                        <input type="text" class="form-control" placeholder="Основной текст" name="body">
-
-                        <div class="input-group-append">
-                            <button type="submit" class="btn btn-success">Отправить</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-            <div class="container mt-3">
-
-                <div class="create-post">
-                    <h5>Small Text</h5>
-                    <form action="/post" method="post">
-                        @csrf
-                        <div class="input-group mb-3">
-
-                            <input type="text" class="form-control" placeholder="Вспомогательный текст" name="body">
-
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-success">Отправить</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
 
 
 
 </div>
 
-
-</div>
-        <div class="knopka">
-        <div class="container mt-3">
-
-            <div class="create-post">
-                <h5>Small Text</h5>
-                <form action="/post" method="post">
-                    @csrf
-                    <div class="input-group mb-3">
-
-                        <input type="text" class="form-control" placeholder="dalda" name="body">
-
-                        <div class="input-group-append">
-                            <button type="submit" class="btn btn-success">Отправить</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        </div>
 
         <div id="content" class="main-content">
             <div class="widget-content widget-content-area  style-custom-1">

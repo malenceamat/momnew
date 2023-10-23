@@ -37,25 +37,6 @@ class UploadImageController extends Controller
 
         $save->save();
 
-        Photo::create([
-            'name' => $name,
-            'path' => $path
-
-        ]);
-
-        $data = [
-            'name' => $name,
-            'path' => $path,
-            'age' => $path
-
-        ];
-
-        Photo::create($data);
-
-
-
-
-
 
         $photos = Photo::all();
         return view('slider', ['photos' => $photos])->with('status', 'Изображение было загружено');
