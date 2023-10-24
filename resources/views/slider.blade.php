@@ -128,52 +128,76 @@
                         </div>
 
 
-
+                    </div>
                         {{--  @foreach($photos as $ph)
                               {{$ph['name']}}
                               {{$ph['path']}}
                               <img src="{{asset('/storage/'. $ph['path'])}}" class="d-block w-100" alt="...">
                           @endforeach--}}
-                    </div>
+
                 </form>
                 <div class="row">
 
 
 
-                    <form action="" method="post" id="text">
+                    <form action="/slider" method="POST" id="text" enctype="multipart/form-data">
                         @csrf
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="file">
+                                    <input type="file" name="image" placeholder="Выбрать изображение" id="image" src="/">
+                                </label>
+                                @error('image')
+                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="container mt-3">
                             <div class="create-post">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Основной текст" name="body">
+                                    <label>
+                                        <input type="text" class="form-control" placeholder="Вспомогательный текст" name="body">
+                                    </label>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput1"></label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Вспомогательный текст">
+
+                                    <label>
+                                        <input type="text" class="form-control" placeholder="Основной текст" name="text">
+                                    </label>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput1"></label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Текст для кнопок">
+
+                                    <label>
+                                        <input type="text" class="form-control" name="buttons" placeholder="Текст для кнопок">
+                                    </label>
                                 </div>
 
                             </div>
                             <div class="container mt-3">
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-success" id="text">Отправить</button>
+                                    <button type="submit" class="btn btn-success" id="t123ext">Отправить</button>
                                 </div>
                             </div>
                         </div>
 
                     </form>
+              {{--      <script>
 
+
+                        const formElement = document.getElementById('text'); // извлекаем элемент формы
+                        formElement.addEventListener('submit', (e) => {
+                            e.preventDefault();
+                            const formData = new FormData(formElement); // создаём объект FormData, передаём в него элемент формы
+                            // теперь можно извлечь данные
+                            const name = formData.get('text'); // 'John'
+
+                        });
+
+
+
+                    </script>--}}
                 </div>
-
-
-
-
-
             </div>
-
 
 
 
@@ -204,7 +228,7 @@
             </script>
         </div>
 
-        <div class="main-content" id="content">
+        {{--<div class="main-content" id="content">
 
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -219,7 +243,7 @@
                     <button class="btn btn-outline-danger mb-2">Удалить</button>
                 </div>
             </div>
-        </div>
+        </div>--}}
 
     </div>
 

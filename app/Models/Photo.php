@@ -9,9 +9,8 @@ class Photo extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'path'
-    ];
+
     protected $table = 'photo';
+
+
 }

@@ -18,6 +18,7 @@ class CreatePhotosTable extends Migration
             $table->string('name');
             $table->text('body');
             $table->string('image');
+            $table->string('path');
             $table->timestamps();
         });
     }
@@ -29,6 +30,9 @@ class CreatePhotosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('photo');
+        Schema::table('photo', function (Blueprint $table){
+            $table->dropColimn('path');
+        });
+
     }
 }

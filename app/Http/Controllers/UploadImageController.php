@@ -34,7 +34,8 @@ class UploadImageController extends Controller
         /*Photo::where('path', 'value')->first();*/
         $save->name = $name;
         $save->path = $path;
-
+        $save->body = $path;
+        $save->image = $path;
         $save->save();
 
 

@@ -2,7 +2,7 @@
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UploadImageController;
-use App\Http\Controllers\ButtonsText;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,8 +24,8 @@ Route::get('/admin', function () {
 
 require __DIR__.'/auth.php';
 
-Route::post('/post', [PostController::class, 'Submit']);
-Route::post('/textbtn', [ButtonsText::class, 'Submit']);
+Route::post('/slider', [PostController::class, 'Submit']);
+/*Route::post('/slider', [ButtonsText::class, 'Submit']);*/
 
 Route::get('upload-image', [UploadImageController::class, 'index']);
 Route::post('save', [UploadImageController::class, 'save']);
