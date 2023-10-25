@@ -15,9 +15,9 @@ class Texts extends Migration
     {
         Schema::create('posts', function (Blueprint $table){
             $table->id();
-            $table->string('body')->default('');
-            $table->string('text')->default('');
-            $table->string('buttons')->default('');
+            $table->string('body')->nullable();
+            $table->string('text')->nullable();
+            $table->string('buttons')->nullable();
         });
     }
 

@@ -9,51 +9,49 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Post;
 use Illuminate\Support\Facades\Storage;
-
+use App\Models\sliders;
 class PostController extends Controller
 {
+
     public function submit(PostRequest $req)
     {
 
         $validatedData = $req->validate([
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
 
-        ]);
-        $path = Storage::put('image', $req->file('image'));
-        $name = $req->file('image')->getClientOriginalName();
+        ]);                               //валидация
 
-        $path = $req->file('image')->store('image');
-        /*dd($request->file('image'));*/
+        $path = Storage::put('image', $req->file('image'));  // cохраняет наш файл(фотку) в папку image
+        $name = $req->file('image')->getClientOriginalName();  // позволяет работать с локальными данными в нашем проекте и отправить туда файл
+        $path = $req->file('image')->store('image');  // отправляет наш файл(фотку) в папку image
+        $photos = sliders::all();  //показывает все фотки
 
-        $save = new Photo;
-        /*Photo::where('path', 'value')->first();*/
-        $save->name = $name;
-        $save->path = $path;
-        $save->body = $path;
-        $save->image = $path;
-        $save->save();
-
-
-        $photos = Photo::all();
         $body = $req->body;
         $text = $req->text;
         $button = $req->buttons;
-         DB::table('posts')->insert(['text' => $body, 'body' =>$text, 'buttons' =>$button]);
+
+        Photo::create([
+            'head' => $body,
+            'support' =>$text,
+            'buttons' =>$button,
+            'body' => $path,
+            'name' => $name
+        ]);
+
+                //сохранение текста из формы в бд
+        return view('slider', [
+            'photos' => $photos,
 
 
-        return view('slider', ['photos' => $photos])->with('status', 'Изображение было загружено');
+        ])->with('status', 'Изображение было загружено');
     }
-
 }
 
 
 
 
-/*     public function index()
-    {
-        $post = Db::table('post')->get();
-        return view('image', ['post' => $post]);
-    }*/
+
+
 
 
 

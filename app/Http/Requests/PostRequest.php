@@ -24,10 +24,9 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            'body','text', 'buttons' => 'required|min:5|max:30'
+            'buttons', 'text', 'body' => 'required|min:0|max:30'
 
-           /* 'text' => 'required|min:5|max:30',
-            'buttons' => 'required|min:5|max:30'*/
+
         ];
     }
 }

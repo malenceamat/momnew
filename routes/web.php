@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('content');
 });
 
+Route::get('/tablica', function () {
+    return view('tablica');
+});
+
 Route::get('/admin', function () {
     return view('admin');
 })->middleware(['auth'])->name('dashboard');
