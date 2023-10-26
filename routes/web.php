@@ -1,8 +1,9 @@
 <?php
 use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UploadImageController;
-
+use App\Http\Controllers\EditController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,3 +63,17 @@ Route::get('/buttons', function () {
 
 Route::get('/post', [PostController::class, 'index']);
 Route::get('/slider', [UploadImageController::class, 'slider']);
+
+
+Route::get('tablica', function () {
+
+    $tablica = DB::table('slider')->get();
+
+    return view('tablica', ['tablica' => $tablica]);
+});
+
+/*Route::get('/buttons{id}', 'EditController'
+});*/
+
+
+Route::delete('/tablica/{delete}',[EditController::class, 'DELETE']);

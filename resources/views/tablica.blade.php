@@ -82,32 +82,31 @@
                                 <th>id</th>
                                 <th>name</th>
                                 <th>created_at</th>
-                                <th>image</th>
+                                <th>Text</th>
+                                <th>Supp Text</th>
+                                <th>Buttons</th>
                                 <th class="no-content">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
+                           @foreach($tablica as $key => $data)
                             <tr>
-                                <td>1</td>
-                                <td>image/1</td>
-                                <td>data</td>
-                                <td>prev</td>
-                                <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle table-cancel"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg></td>
+                                <td>{{$data->id}}</td>
+                                <td>{{$data->body}}</td>
+                                <td>{{$data->created_at}}</td>
+                                <td>{{$data->head}}</td>
+                                <td>{{$data->support}}</td>
+                                <td>{{$data->buttons}}</td>
+                                <td><form method="POST" action="/tablica/{{$data->id}}">
+                                        {{method_field('DELETE')}}
+                                        {{csrf_field()}}
+                                        <button type="submit" name="button">Delete</button>
+
+                                    </form>
+                                </td>
+                                {{--td><form id="$data->id"><button class="editbtn"><a href="/banner">edit</a></button> <button class="deletebtn">delete</button></form> </td>--}}
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>image/2</td>
-                                <td>data</td>
-                                <td>prev</td>
-                                <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle table-cancel"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>image/3</td>
-                                <td>data</td>
-                                <td>prev</td>
-                                <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle table-cancel"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg></td>
-                            </tr>
+                           @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -116,6 +115,7 @@
             </div>
 
         </div>
+
         <div class="footer-wrapper">
             <div class="footer-section f-section-1">
                 <p class="">Copyright © 2021 <a target="_blank" href="https://designreset.com">DesignReset</a>, All rights reserved.</p>

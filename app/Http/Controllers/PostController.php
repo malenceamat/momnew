@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use \Illuminate\Http\RedirectResponse;
 use App\Http\Requests\PostRequest;
 use App\Models\Photo;
 use Illuminate\Database\Eloquent\Model;
@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Post;
 use Illuminate\Support\Facades\Storage;
 use App\Models\sliders;
+
 class PostController extends Controller
 {
 
@@ -29,7 +30,6 @@ class PostController extends Controller
         $body = $req->body;
         $text = $req->text;
         $button = $req->buttons;
-
         Photo::create([
             'head' => $body,
             'support' =>$text,
@@ -45,6 +45,7 @@ class PostController extends Controller
 
         ])->with('status', 'Изображение было загружено');
     }
+
 }
 
 
