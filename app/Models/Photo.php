@@ -9,7 +9,7 @@ class Photo extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'body', 'head', 'support', 'buttons'];
+    protected $fillable = ['name', 'body', 'head', 'support', 'buttons', 'mama'];
 
     protected $table = 'slider';
 

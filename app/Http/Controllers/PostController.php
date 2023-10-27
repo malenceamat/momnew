@@ -30,10 +30,13 @@ class PostController extends Controller
         $body = $req->body;
         $text = $req->text;
         $button = $req->buttons;
+        $mama = $req->mama;
+
         Photo::create([
             'head' => $body,
             'support' =>$text,
             'buttons' =>$button,
+            'mama' =>$mama,
             'body' => $path,
             'name' => $name
         ]);

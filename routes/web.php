@@ -3,6 +3,7 @@ use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UploadImageController;
+use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\EditController;
 /*
 |--------------------------------------------------------------------------
@@ -59,21 +60,12 @@ Route::get('/buttons', function () {
     return view('buttons');
 });
 
-
-
 Route::get('/post', [PostController::class, 'index']);
+Route::get('/tablica', [DeleteController::class, 'table']);
+
 Route::get('/slider', [UploadImageController::class, 'slider']);
+Route::get('/slider/{update}',[EditController::class, 'edit']);
+/*Route::get('/slider/{id}{update}',[EditController::class, 'formedit']);*/
+Route::delete('/tablica/{delete}',[DeleteController::class, 'DELETE']);
 
 
-Route::get('tablica', function () {
-
-    $tablica = DB::table('slider')->get();
-
-    return view('tablica', ['tablica' => $tablica]);
-});
-
-/*Route::get('/buttons{id}', 'EditController'
-});*/
-
-
-Route::delete('/tablica/{delete}',[EditController::class, 'DELETE']);

@@ -8,9 +8,9 @@
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/scrollspyNav.css" rel="stylesheet" type="text/css" />
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/scrollspyNav.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="//unpkg.com/a11y-slider@latest/dist/a11y-slider.css" />
     <!-- END GLOBAL MANDATORY STYLES -->
 
@@ -113,6 +113,11 @@
                                         <input type="text" class="form-control" name="buttons" placeholder="Текст для кнопок">
                                     </label>
                                 </div>
+                                <div class="form-group">
+                                    <label>
+                                        <input type="text" class="form-control" name="mama" placeholder="Ссылка для кнопки">
+                                    </label>
+                                </div>
                             </div>
                             <div class="container mt-3">
                                 <div class="input-group-append">
@@ -169,6 +174,7 @@
         $(document).ready(function() {App.init();});</script>
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/scrollspyNav.js"></script>
+</div>
 </body>
 </html>
 

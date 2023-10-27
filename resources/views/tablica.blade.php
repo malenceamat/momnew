@@ -85,6 +85,7 @@
                                 <th>Text</th>
                                 <th>Supp Text</th>
                                 <th>Buttons</th>
+                                <th>Text Buttons</th>
                                 <th class="no-content">Actions</th>
                             </tr>
                             </thead>
@@ -97,16 +98,23 @@
                                 <td>{{$data->head}}</td>
                                 <td>{{$data->support}}</td>
                                 <td>{{$data->buttons}}</td>
-                                <td><form method="POST" action="/tablica/{{$data->id}}">
+                                <td>{{$data->mama}}</td>
+                                <td> <form method="POST" action="/tablica/{{$data->id}}">
                                         {{method_field('DELETE')}}
                                         {{csrf_field()}}
                                         <button type="submit" name="button">Delete</button>
-
                                     </form>
+
+                                    <form method="GET" action="/slider/{{$data->id}}">
+
+                                        {{csrf_field()}}
+                                        <button type="submit">Edit</button>
+                                        @endforeach
+                                    </form>
+
                                 </td>
-                                {{--td><form id="$data->id"><button class="editbtn"><a href="/banner">edit</a></button> <button class="deletebtn">delete</button></form> </td>--}}
                             </tr>
-                           @endforeach
+
                             </tbody>
                         </table>
                     </div>

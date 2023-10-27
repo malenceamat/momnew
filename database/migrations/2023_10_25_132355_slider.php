@@ -21,6 +21,7 @@ class Slider extends Migration
             $table->string('head')->nullable();
             $table->string('support')->nullable();
             $table->string('buttons')->nullable();
+            $table->string('mama')->nullable();
         });
     }
 
