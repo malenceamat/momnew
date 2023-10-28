@@ -49,6 +49,14 @@ class PostController extends Controller
         ])->with('status', 'Изображение было загружено');
     }
 
+
+
+
+
+
+
+
+
 }
 
 

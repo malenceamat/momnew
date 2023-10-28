@@ -90,30 +90,35 @@
                             </tr>
                             </thead>
                             <tbody>
-                           @foreach($tablica as $key => $data)
-                            <tr>
-                                <td>{{$data->id}}</td>
-                                <td>{{$data->body}}</td>
-                                <td>{{$data->created_at}}</td>
-                                <td>{{$data->head}}</td>
-                                <td>{{$data->support}}</td>
-                                <td>{{$data->buttons}}</td>
-                                <td>{{$data->mama}}</td>
-                                <td> <form method="POST" action="/tablica/{{$data->id}}">
-                                        {{method_field('DELETE')}}
-                                        {{csrf_field()}}
-                                        <button type="submit" name="button">Delete</button>
-                                    </form>
+                            @foreach($tablica as $key => $data)
+                                <tr>
+                                    <td>{{$data->id}}</td>
+                                    <td>{{$data->body}}</td>
+                                    <td>{{$data->created_at}}</td>
+                                    <td>{{$data->head}}</td>
+                                    <td>{{$data->support}}</td>
+                                    <td>{{$data->buttons}}</td>
+                                    <td>{{$data->mama}}</td>
+                                    <td> <form method="POST" action="/tablica/{{$data->id}}">
+                                            {{method_field('DELETE')}}
+                                            {{csrf_field()}}
+                                            <button type="submit" name="button">Delete</button>
+                                        </form>
+                                        <form method="POST" action="/edit/{{$data->id}}">
 
-                                    <form method="GET" action="/slider/{{$data->id}}">
-
-                                        {{csrf_field()}}
-                                        <button type="submit">Edit</button>
+                                            {{csrf_field()}}
+                                            <button type="submit" name="button">Edit</button>
+                                        </form>
                                         @endforeach
-                                    </form>
+                                    {{--    <form method="GET" action="/slider/{{$data->id}}">
 
-                                </td>
-                            </tr>
+                                            {{csrf_field()}}
+                                            <button type="submit">Edit</button>--}}
+
+                                        {{--</form>--}}
+
+                                    </td>
+                                </tr>
 
                             </tbody>
                         </table>

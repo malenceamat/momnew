@@ -9,6 +9,7 @@ use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
 class DeleteController extends Controller
 {
+
    public function delete($id)
    {
 

@@ -67,5 +67,5 @@ Route::get('/slider', [UploadImageController::class, 'slider']);
 Route::get('/slider/{update}',[EditController::class, 'edit']);
 /*Route::get('/slider/{id}{update}',[EditController::class, 'formedit']);*/
 Route::delete('/tablica/{delete}',[DeleteController::class, 'DELETE']);
-
-
+Route::post('/edit/{edit}',[EditController::class, 'edit']);
+Route::post('edit',[EditController::class, 'update']);
