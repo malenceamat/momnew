@@ -1,8 +1,6 @@
 <?php
 use App\Http\Controllers\PostController;
-
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\EditController;
 /*
@@ -47,12 +45,6 @@ Route::get('/banner', function () {
     return view('banner');
 });
 
-Route::get('/text', function () {
-    return view('text');
-});
-
-
-
 Route::get('/buttons', function () {
     return view('buttons');
 });
@@ -66,4 +58,4 @@ Route::get('/tablcia/{update}',[EditController::class, 'edit']);
 Route::delete('/tablica/{delete}',[DeleteController::class, 'DELETE']);
 Route::post('/edit/{edit}',[EditController::class, 'edit']);
 Route::post('edit',[EditController::class, 'update']);
-/*Route::post('/edit/{edit}',[EditController::class, 'save']);*/
+Route::post('edit/{edit}',[EditController::class, 'lama']);

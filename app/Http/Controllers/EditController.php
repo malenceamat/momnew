@@ -17,21 +17,6 @@ class EditController extends Controller
         return view('edit',['data'=>$data]);
 
     }
-  /*  public function save($req)
-    {
-        $path = Storage::put('public/image', $req->file('image'));
-        $name = $req->file('image')->getClientOriginalName();
-        $path = $req->file('image')->store('image');
-
-        sliders::create([
-            'name' => $name,
-            'body' => $path
-        ]);
-
-    }*/
-
-
-
 
 public function update(Request $req)
 {
@@ -57,7 +42,13 @@ public function update(Request $req)
 }
 
 
+    public function lama($id)
+    {
+        $papa = sliders::find($id);
 
+        return view('edit', ['data' => $papa]);
+
+    }
 
 
 }

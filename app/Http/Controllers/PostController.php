@@ -1,13 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use \Illuminate\Http\RedirectResponse;
+
 use App\Http\Requests\PostRequest;
 use App\Models\Photo;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\Post;
+
 use Illuminate\Support\Facades\Storage;
 use App\Models\sliders;
 
