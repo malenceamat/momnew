@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Photo;
 use App\Models\sliders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,9 +20,12 @@ class DeleteController extends Controller
    }
     public function table()
     {
-        $tablica = DB::table('slider')->get();
+        $tablica = sliders::get();
 
         return view('tablica', ['tablica' => $tablica]);
+
     }
+
+
 
 }

@@ -22,7 +22,7 @@ class PostController extends Controller
 
         ]);                               //валидация
 
-        $path = Storage::put('image', $req->file('image'));  // cохраняет наш файл(фотку) в папку image
+        $path = Storage::put('public/image', $req->file('image'));  // cохраняет наш файл(фотку) в папку image
         $name = $req->file('image')->getClientOriginalName();  // позволяет работать с локальными данными в нашем проекте и отправить туда файл
         $path = $req->file('image')->store('image');  // отправляет наш файл(фотку) в папку image
         $photos = sliders::all();  //показывает все фотки
@@ -50,7 +50,15 @@ class PostController extends Controller
     }
 
 
+    public function slider()
 
+    {
+
+
+        $photos = Photo::all();
+        return view('slider', ['photos' => $photos])->with('status', 'Изображение было загружено');
+
+    }
 
 
 

@@ -75,7 +75,7 @@
 </head>
 <body class="sidebar-noneoverflow" data-spy="scroll" data-target="#navSection" data-offset="140">
 
-@include('admin.navbar')
+
 
 
 

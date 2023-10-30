@@ -1,8 +1,8 @@
 <?php
 use App\Http\Controllers\PostController;
-use Illuminate\Support\Facades\DB;
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UploadImageController;
+
 use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\EditController;
 /*
@@ -33,11 +33,10 @@ require __DIR__.'/auth.php';
 Route::post('/slider', [PostController::class, 'Submit']);
 /*Route::post('/slider', [ButtonsText::class, 'Submit']);*/
 
-Route::get('upload-image', [UploadImageController::class, 'index']);
-Route::post('save', [UploadImageController::class, 'save']);
+
 
 Route::get('/admin', function () {
-    return view('admin');
+    return view('contentadmin.contentadmin');
 });
 
 Route::get('/slider', function () {
@@ -52,9 +51,7 @@ Route::get('/text', function () {
     return view('text');
 });
 
-Route::get('/image', function () {
-    return view('image');
-});
+
 
 Route::get('/buttons', function () {
     return view('buttons');
@@ -63,9 +60,10 @@ Route::get('/buttons', function () {
 Route::get('/post', [PostController::class, 'index']);
 Route::get('/tablica', [DeleteController::class, 'table']);
 
-Route::get('/slider', [UploadImageController::class, 'slider']);
-Route::get('/slider/{update}',[EditController::class, 'edit']);
-/*Route::get('/slider/{id}{update}',[EditController::class, 'formedit']);*/
+Route::get('/slider', [PostController::class, 'slider']);
+Route::get('/tablcia/{update}',[EditController::class, 'edit']);
+
 Route::delete('/tablica/{delete}',[DeleteController::class, 'DELETE']);
 Route::post('/edit/{edit}',[EditController::class, 'edit']);
 Route::post('edit',[EditController::class, 'update']);
+/*Route::post('/edit/{edit}',[EditController::class, 'save']);*/

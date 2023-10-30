@@ -11,48 +11,59 @@ use Illuminate\Support\Facades\Storage;
 
 class EditController extends Controller
 {
-
     public function edit($id)
     {
         $data= sliders::find($id);
         return view('edit',['data'=>$data]);
 
     }
+  /*  public function save($req)
+    {
+        $path = Storage::put('public/image', $req->file('image'));
+        $name = $req->file('image')->getClientOriginalName();
+        $path = $req->file('image')->store('image');
+
+        sliders::create([
+            'name' => $name,
+            'body' => $path
+        ]);
+
+    }*/
+
+
+
 
 public function update(Request $req)
-    {
+{
 
-        $data = sliders::find($req->id);
-        $data->name = $req->name;
-        $data->body = $req->body;
-        $data->head = $req->head;
-        $data->support = $req->support;
-        $data->buttons = $req->buttons;
-        $data->mama = $req->mama;
+    $data = sliders::find($req->id);
+    /*$data->name = $req->name;*/
+
+    $data->head = $req->head;
+    $data->support = $req->support;
+    $data->buttons = $req->buttons;
+    $data->mama = $req->mama;
+
+    if ($req['body']) {
+        if ($req['body'] = $data['body']) {
+            Storage::disk('public')->delete('image', $data['body']);
+            $data ['body'] =
+                Storage::disk('public')->put('image', $req['body']);
+        }
         $data->save();
-
-
-            return redirect('tablica');
+        return redirect('tablica');
     }
 
+}
+
+
+
+
 
 }
 
 
 
 
-/*public function edit($id)
-{
-    return view('slider', ['slider' => sliders::find($id)]);
 
-}
-
-public function update(PostRequest $request, sliders $sliders)
-{
-    $sliders->update($request->validated());
-
-
-    return $sliders;
-
-}*/
 
