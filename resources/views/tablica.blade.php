@@ -28,10 +28,11 @@
                             @foreach($tablica as $data)
                                 <tr>
                                     <td>{{$data->id}}</td>
-                                    <td><div class="container mt-0">
+                                    <td>
+                                        <div class="container mt-0" id="sem">
 
 
-                                            <img src="{{asset('/storage/'. $data['body'])}}" class="d-block w-25 float-left width="" alt="...">
+                                            <img src="{{asset('/storage/'. $data['body'])}}" style="float: left; width: 100px; height: 100px; object-fit: cover;">
 
                                         </div>
 

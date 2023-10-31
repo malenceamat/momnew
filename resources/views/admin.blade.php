@@ -31,12 +31,7 @@
         input[type=file]::file-selector-button:hover {
             background: #0d45a5;
         }
-        img {
-            float: left;
-            width:  100px;
-            height: 100px;
-            object-fit: cover;
-        }
+
         .component-card_1 {
             border: 1px solid #e0e6ed;
             border-radius: 6px;
