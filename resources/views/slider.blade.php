@@ -1,8 +1,12 @@
-@extends('admin')
-@include('style')
 
+@include('style')
 @include('admin.sidebar')
+<body class="sidebar-noneoverflow" data-spy="scroll" data-target="#navSection" data-offset="100">
+
 <div class="main-container" id="container">
+
+
+
     <div id="content" class="main-content">
         <div class="layout-px-spacing">
 
@@ -96,3 +100,4 @@
 </div>
 
 </div>
+</body>
