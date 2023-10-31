@@ -3,9 +3,9 @@
 
 @include('admin.sidebar')
 <div class="main-container" id="container">
-
-
     <div id="content" class="main-content">
+        <div class="layout-px-spacing">
+
 
         <div class="card">
             <div class="card-header text-center font-weight-bold">
@@ -95,3 +95,4 @@
     </div>
 </div>
 
+</div>

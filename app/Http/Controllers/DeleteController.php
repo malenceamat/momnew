@@ -2,20 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Photo;
+
+use App\Models\Slider;
 use App\Models\sliders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use SebastianBergmann\CodeCoverage\Report\Xml\Project;
+use Illuminate\Support\Facades\Storage;
+
 
 class DeleteController extends Controller
 {
 
-   public function delete($id)
+   public function delete(Request $req, $id)
    {
+       $delete = sliders::find($id);
 
-       sliders::destroy($id);
+       Storage::disk('public')->delete('image', $delete['body']);
+       $delete->delete();
+
        return redirect('/tablica');
+       /*sliders::destroy($id);
+       Storage::disk('public')->delete('image');
+       return redirect('/tablica');*/
 
    }
     public function table()
@@ -28,4 +36,15 @@ class DeleteController extends Controller
 
 
 
-}
+} /*public function deleteForm($id, Request $request)
+{
+
+    $delete =        Slider::find($id);
+    Storage::disk('public')->delete('/images', $delete['photo']);
+    $delete->delete();
+
+
+    return Redirect::to('/slider');
+
+
+}*/

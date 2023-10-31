@@ -55,7 +55,7 @@ Route::get('/tablica', [DeleteController::class, 'table']);
 Route::get('/slider', [PostController::class, 'slider']);
 Route::get('/tablcia/{update}',[EditController::class, 'edit']);
 
-Route::delete('/tablica/{delete}',[DeleteController::class, 'DELETE']);
+Route::delete('/tablica/{delete}',[DeleteController::class, 'delete']);
 Route::post('/edit/{edit}',[EditController::class, 'edit']);
 Route::post('edit',[EditController::class, 'update']);
 Route::post('edit/{edit}',[EditController::class, 'lama']);
