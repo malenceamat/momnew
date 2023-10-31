@@ -42,12 +42,12 @@
                                     <td> <form method="POST" action="/tablica/{{$data->id}}">
                                             {{method_field('DELETE')}}
                                             {{csrf_field()}}
-                                            <button type="submit" name="button">Delete</button>
+                                            <button class="btn btn-danger mb-2">Delete</button>
                                         </form>
                                         <form method="POST" action="/edit/{{$data->id}}">
 
                                             {{csrf_field()}}
-                                            <button type="submit" name="button">Edit</button>
+                                            <button class="btn btn-primary mb-2">Edit</button>
                                         </form>
                                         @endforeach
                                     </td>

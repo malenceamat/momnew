@@ -33,7 +33,7 @@
                                 <input type="text" name="support" value="{{$data['support']}}"> <br> <br>
                                 <input type="text" name="buttons" value="{{$data['buttons']}}"> <br> <br>
                                 <input type="text" name="mama" value="{{$data['mama']}}"> <br> <br>
-                                <button type="submit" > Update</button>
+                                    <button class="btn btn-success mb-2">Update</button>
                                 </div>
                             </form>
                                 <img src="{{asset('/storage/'. $data['body'])}}" class="d-block w-25 float-left width=" alt="...">

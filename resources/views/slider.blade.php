@@ -14,11 +14,13 @@
             <div class="card-body">
                 <div class="row">
                     <form action="/slider" method="POST" id="text" enctype="multipart/form-data">
+
                         @csrf
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label class="file">
                                     <input type="file" name="image" placeholder="Выбрать изображение" id="image" src="">
+
                                 </label>
                                 @error('image')
                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -34,13 +36,13 @@
                                 <div class="containet mt-3">
                                     <div class="form-group">
                                         <label>
-                                            <input type="text" class="form-control" placeholder="Вспомогательный текст" name="body">
+                                            <input type="text" class="form-control" placeholder="Основной текст" name="body">
                                         </label>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>
-                                        <input type="text" class="form-control" placeholder="Основной текст" name="text">
+                                        <input type="text" class="form-control" placeholder="Вспомогательный текст" name="text">
                                     </label>
                                 </div>
                                 <div class="form-group">

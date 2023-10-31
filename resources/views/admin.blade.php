@@ -17,6 +17,20 @@
     <!--  BEGIN CUSTOM STYLE FILE  -->
     <link href={{asset("/assets/css/elements/color_library.css")}} rel="stylesheet" type="text/css" />
     <style>
+        input[type=file]::file-selector-button {
+            margin-right: 20px;
+            border: none;
+            background: #084cdf;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            transition: background .2s ease-in-out;
+        }
+
+        input[type=file]::file-selector-button:hover {
+            background: #0d45a5;
+        }
         img {
             float: left;
             width:  100px;
