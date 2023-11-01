@@ -1,12 +1,12 @@
-@extends('admin')
-
-
 @include('style')
 
 
-    @include('admin.sidebar')
-<div class="main-container" id="container">
 
+
+
+
+<div class="main-container" id="container">
+    @include('admin.sidebar')
 
         <div id="content" class="main-content">
 
