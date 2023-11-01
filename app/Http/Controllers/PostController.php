@@ -51,7 +51,6 @@ class PostController extends Controller
 
     {
 
-
         $photos = Photo::all();
         return view('slider', ['photos' => $photos])->with('status', 'Изображение было загружено');
 

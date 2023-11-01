@@ -19,7 +19,7 @@ class EditController extends Controller
     }
 
 public function update(Request $req)
-{
+ {
 
     $data = sliders::find($req->id);
     /*$data->name = $req->name;*/
@@ -39,16 +39,7 @@ public function update(Request $req)
         return redirect('tablica');
     }
 
-}
-
-
-    public function lama($id)
-    {
-        $papa = sliders::find($id);
-
-        return view('edit', ['data' => $papa]);
-
-    }
+ }
 
 
 }

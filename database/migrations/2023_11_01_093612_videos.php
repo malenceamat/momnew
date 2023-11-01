@@ -13,10 +13,12 @@ class Videos extends Migration
      */
     public function up()
     {
-        Schema::create('videos', function (Blueprint $table) {
+        Schema::create('video', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('path')->nullable();
+            $table->string('video')->nullable();
+            $table->timestamps();
+            $table->string('Text')->nullable();
+            $table->string('SmallText')->nullable();
         });
     }
 

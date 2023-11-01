@@ -21,9 +21,7 @@ class DeleteController extends Controller
        $delete->delete();
 
        return redirect('/tablica');
-       /*sliders::destroy($id);
-       Storage::disk('public')->delete('image');
-       return redirect('/tablica');*/
+
 
    }
     public function table()
@@ -36,7 +34,10 @@ class DeleteController extends Controller
 
 
 
-} /*public function deleteForm($id, Request $request)
+}
+
+
+/*public function deleteForm($id, Request $request)
 {
 
     $delete =        Slider::find($id);

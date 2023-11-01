@@ -17,24 +17,47 @@
 
 
 
-                        <form action="/video" method="POST" id="text" enctype="multipart/form-data">
+                        <form method="POST" action="{{ Route ('insert.file') }}" enctype="multipart/form-data">
 
-                            @csrf
+                            {{csrf_field()}}
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label class="file">
-                                        <input type="file" name="video" placeholder="Выбрать изображение" id="video" src="">
-                                    </label>
+
+                                        <input type="file" name="video" placeholder="Выбрать изображение">
+                                    <p>
+                                    @if($errors->has('video'))
+                                        {{$errors->first('video')}}
+                                    @endif
+                                    </p>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="text" class="form-control" name="Text" placeholder="Основной текст">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="text" class="form-control" name="SmallText" placeholder="Вспомогательный текст">
+                                </label>
+                            </div>
+
+
                             <div class="container">
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-success" id="t123ext">Отправить</button>
+                                    <button type="submit" class="btn btn-success" name="click">Отправить</button>
                                 </div>
                             </div>
                         </form>
 
+                        @foreach($video as $qwe)
 
+                            <video width="320" height="240" autoplay muted loop>
+                                <source src="{{asset('upload/'. $qwe['video'])}}" type="video/mp4">
+                            </video>
+
+
+                        @endforeach
 
 
 
