@@ -39,7 +39,7 @@ Route::post('edit',[EditController::class, 'update']);
 
 
 Route::get('/video', [VideoController::class, 'video']);
-Route::post('/insert_video', [VideoController::class, 'insert'])->name('insert.file');
+Route::post('/video', [VideoController::class, 'insert'])->name('video');
 
 Route::get('video', [VideoController::class, 'qwe']);
 

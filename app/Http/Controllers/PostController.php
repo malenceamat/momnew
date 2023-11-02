@@ -29,7 +29,7 @@ class PostController extends Controller
         $button = $req->buttons;
         $mama = $req->mama;
 
-        Photo::create([
+        Photo::updateOrcreate([
             'head' => $body,
             'support' =>$text,
             'buttons' =>$button,

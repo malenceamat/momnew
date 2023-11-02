@@ -17,7 +17,7 @@
 
 
 
-                        <form method="POST" action="{{ Route ('insert.file') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ Route ('video') }}" enctype="multipart/form-data">
 
                             {{csrf_field()}}
                             <div class="col-md-12">
@@ -50,14 +50,13 @@
                             </div>
                         </form>
 
-@foreach($video as $data)
+
 
                             <video width="320" height="240" autoplay muted loop>
-                                <source src="{{asset('/storage/'. $data['video'])}}">
+                                <source src="{{asset('/storage/'. $video['video'])}}">
                             </video>
 
 
-                        @endforeach
 
 
 

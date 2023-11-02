@@ -26,12 +26,12 @@ class VideoController extends Controller
     public function qwe()
     {
 
-        /*$video = DB::table('video')->orderBy('video')->first();
+        /*$video = DB::table('video')->orderByDesc('video')->first();
         dd($video);
         return view('video', ['video' => $video]);*/
 
-
-        $video =Video::all();
+/*$video=DB::table('video')->where('video')->value('video');*/
+        $video =Video::first();
         return view('video', ['video' => $video]);
     }
 
@@ -44,32 +44,34 @@ class VideoController extends Controller
          'video' => 'required|mimes:mp4,ogx,oga,ogv,ogg,webm'
      ]);
 
-     /*$file = $request->file('video');
-     $file->move('upload/tmp',$file->getClientOriginalExtension());
-     $file_name=$file->getClientOriginalName();*/
 
-
-     $path = Storage::put('public/upload', $req->file('video'));  // cохраняет наш файл(фотку) в папку image
+     /*$path = Storage::put('public/upload', $req->file('video'));  // cохраняет наш файл(фотку) в папку image
      $name = $req->file('video')->getClientOriginalName();  // позволяет работать с локальными данными в нашем проекте и отправить туда файл
      $path = $req->file('video')->store('upload');
-     $video = video::all();
+     $video = Video::all();*/
 
 
-     $Text = $req->Text;
-     $SmallText = $req->SmallText;
+     /*$Text = $req->Text;
+     $SmallText = $req->SmallText;*/
 
-     video::create([
-         'Text' => $Text,
-         'SmallText' => $SmallText,
-         'video' => $path
+     $video= Video::updateOrCreate(
+            ['id' => 1],
+         [
+         'Text' => $req ->get('Text'),
+         'SmallText' => $req ->get ('SmallText'),
+
      ]);
-
-
      return view('video', [
          'video' => $video,
 
 
      ]);
+
+
+
+
+
+
  }
     public function back()
     {
