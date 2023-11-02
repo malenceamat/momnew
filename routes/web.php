@@ -42,3 +42,4 @@ Route::get('/video', [VideoController::class, 'video']);
 Route::post('/insert_video', [VideoController::class, 'insert'])->name('insert.file');
 
 Route::get('video', [VideoController::class, 'qwe']);
+

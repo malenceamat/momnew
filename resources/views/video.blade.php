@@ -50,14 +50,15 @@
                             </div>
                         </form>
 
-                        @foreach($video as $qwe)
+@foreach($video as $data)
 
                             <video width="320" height="240" autoplay muted loop>
-                                <source src="{{asset('upload/'. $qwe['video'])}}" type="video/mp4">
+                                <source src="{{asset('/storage/'. $data['video'])}}">
                             </video>
 
 
                         @endforeach
+
 
 
 
