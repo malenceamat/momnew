@@ -20,7 +20,7 @@ class EditController extends Controller
 
 public function update(Request $req)
  {
-
+dd($req->all());
     $data = sliders::find($req->id);
     /*$data->name = $req->name;*/
 
@@ -39,7 +39,14 @@ public function update(Request $req)
         return redirect('tablica');
     }
 
+    if ()
+
+
+
+
  }
+
+
 
 
 }

@@ -23,7 +23,7 @@ require __DIR__.'/auth.php';
 Route::post('/slider', [PostController::class, 'Submit']);
 Route::get('/admin', function () {return view('contentadmin.contentadmin');});
 Route::get('/slider', function () {return view('slider');});
-Route::get('/banner', function () {return view('banner');});
+Route::get('/gallery', function () {return view('gallery');});
 Route::get('/post', [PostController::class, 'index']);
 Route::get('/tablica', [DeleteController::class, 'table']);
 Route::get('/slider', [PostController::class, 'slider']);
@@ -31,15 +31,7 @@ Route::get('/tablcia/{update}',[EditController::class, 'edit']);
 Route::delete('/tablica/{delete}',[DeleteController::class, 'delete']);
 Route::post('/edit/{edit}',[EditController::class, 'edit']);
 Route::post('edit',[EditController::class, 'update']);
-/*Route::post('edit/{edit}',[EditController::class, 'lama']);*/
-
-
-
-
-
-
 Route::get('/video', [VideoController::class, 'video']);
 Route::post('/video', [VideoController::class, 'insert'])->name('video');
-
 Route::get('video', [VideoController::class, 'qwe']);
 

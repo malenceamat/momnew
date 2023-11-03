@@ -23,18 +23,18 @@
                             <div class="col-md-12">
                                 <div class="form-group">
 
-                                        <input type="file" name="video" placeholder="Выбрать изображение">
+                                        <input type="file" name="video" placeholder="Выбрать изображение" value="{{$video['video']}}">
 
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>
-                                    <input type="text" class="form-control" name="Text" placeholder="Основной текст">
+                                    <input type="text" class="form-control" name="Text" placeholder="Основной текст" value="{{$video['Text']}}">
                                 </label>
                             </div>
                             <div class="form-group">
                                 <label>
-                                    <input type="text" class="form-control" name="SmallText" placeholder="Вспомогательный текст">
+                                    <input type="text" class="form-control" name="SmallText" placeholder="Вспомогательный текст" value="{{$video['SmallText']}}">
                                 </label>
                             </div>
 

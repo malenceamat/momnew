@@ -41,15 +41,9 @@ class VideoController extends Controller
          [
          'Text' => $req ->get('Text'),
          'SmallText' => $req ->get ('SmallText'),
+             'video' => $path
 
          ]);
-
-     Video::updateOrCreate(
-         ['id' => 1],
-         [
-             'video' => $path
-         ]
-     );
 
 
 

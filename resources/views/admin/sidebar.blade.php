@@ -27,10 +27,10 @@
                 </a>
                 <ul class="collapse submenu recent-submenu mini-recent-submenu list-unstyled show" id="forms" data-parent="#accordionExample">
                     <li>
-                        <a href="/slider"> слайдер </a>
+                        <a href="/slider"> Баннер </a>
                     </li>
                     <li>
-                        <a href="/banner"> баннер </a>
+                        <a href="/gallery"> Галерея </a>
                     </li>
                     <li>
                         <a href="/video"> Видео </a>

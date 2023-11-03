@@ -13,7 +13,7 @@
 
         <div class="card">
             <div class="card-header text-center font-weight-bold">
-                <h2> Upload Image </h2>
+                <h2> Загрузка слайда </h2>
             </div>
             <div class="card-body">
                 <div class="row">
