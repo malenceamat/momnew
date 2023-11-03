@@ -24,11 +24,7 @@
                                 <div class="form-group">
 
                                         <input type="file" name="video" placeholder="Выбрать изображение">
-                                    <p>
-                                    @if($errors->has('video'))
-                                        {{$errors->first('video')}}
-                                    @endif
-                                    </p>
+
                                 </div>
                             </div>
                             <div class="form-group">
