@@ -31,7 +31,7 @@
 
                                 <div class="container mt-3">
                                  <input type="hidden" name="id" value="{{$data['id']}}">
-                                    <input type="hidden" name="idbody" value="{{$data['body']}}">
+
                                     <input type="text" class="form-control" name="head" value="{{$data['head']}}"> <br> <br>
                                     <input type="text" class="form-control" name="support" value="{{$data['support']}}"> <br> <br>
                                     <input type="text" class="form-control" name="buttons" value="{{$data['buttons']}}"> <br> <br>
