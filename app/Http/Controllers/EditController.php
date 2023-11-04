@@ -13,42 +13,38 @@ class EditController extends Controller
 {
     public function edit($id)
     {
-        $data= sliders::find($id);
-        return view('edit',['data'=>$data]);
+        $data = sliders::find($id);
+        return view('edit', ['data' => $data]);
+
+
 
     }
 
-public function update(Request $req)
- {
-dd($req->all());
-    $data = sliders::find($req->id);
-    /*$data->name = $req->name;*/
+    public function update(Request $req)
+    {
 
-    $data->head = $req->head;
-    $data->support = $req->support;
-    $data->buttons = $req->buttons;
-    $data->mama = $req->mama;
+        $data = sliders::find($req->id);
+        $data->head = $req->head;
+        $data->support = $req->support;
+        $data->buttons = $req->buttons;
+        $data->mama = $req->mama;
 
-    if ($req['body']) {
-        if ($req['body'] = $data['body']) {
-            Storage::disk('public')->delete('image', $data['body']);
-            $data ['body'] =
-                Storage::disk('public')->put('image', $req['body']);
+        if ($req->hasFile('image')) {
+            $data = $req->file('image');
+        }
+
+        $data->save();
+
+        if ($req['body']) {
+            if ($req['body'] = $data['body']) {
+                Storage::disk('public')->delete('image', $data['body']);
+                $data ['body'] =
+                    Storage::disk('public')->put('image', $req['body']);
+            }
         }
         $data->save();
         return redirect('tablica');
-    }
-
-    if ()
-
-
-
-
- }
-
-
-
-
+        }
 }
 
 
