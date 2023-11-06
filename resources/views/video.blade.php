@@ -24,7 +24,7 @@
                                 <div class="form-group">
 
                                         <input type="file" name="video" placeholder="Выбрать изображение" value="{{$video['video']}}">
-
+                                    <input type="hidden" class="form-control" name="video"  value="{{$video['video']}}">
                                 </div>
                             </div>
                             <div class="form-group">

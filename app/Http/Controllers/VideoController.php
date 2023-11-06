@@ -36,7 +36,7 @@ class VideoController extends Controller
     Storage::put('public/upload', $req->file('video'));  // cохраняет наш файл(фотку) в папку image
     $path = $req->file('video')->store('upload');
 
-     $video= Video::updateOrCreate(
+     $video = Video::updateOrCreate(
             ['id' => 1],
          [
          'Text' => $req ->get('Text'),
@@ -46,23 +46,7 @@ class VideoController extends Controller
 
 
 
-
-
-   /*  if ($req->hasFile('video')) {
-         $video = $req->file('video');
-     }*/
-
-
-
-
-
-
-
-     return view('video',
-     [
-            'video' => $video,
-
-     ]);
+    return view('video',['video' => $video]);
  }
 
 }
