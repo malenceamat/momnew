@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Storage;
 class VideoController extends Controller
 {
 
+    public function edit($id)
+    {
+        $content = Video::find($id);
+        return view('video', compact('content'));
+    }
+
  public function video()
  {
      return view('video');
@@ -26,27 +32,23 @@ class VideoController extends Controller
         return view('video', ['video' => $video]);
     }
 
-
- public function insert(Request $req)
- {
-     $req->validate([
-         'video' => 'required|mimes:mp4,ogx,oga,ogv,ogg,webm'
-     ]);
-
-    Storage::put('public/upload', $req->file('video'));  // cохраняет наш файл(фотку) в папку image
-    $path = $req->file('video')->store('upload');
-
-     $video = Video::updateOrCreate(
-            ['id' => 1],
-         [
-         'Text' => $req ->get('Text'),
-         'SmallText' => $req ->get ('SmallText'),
-             'video' => $path
-         ]);
+    public function insert(Request $req)
+    {
+        $video = Video::find(1);
+        $video->Text = $req->Text;
+        $video->SmallText = $req->SmallText;
 
 
+        if (!empty($video) && $req->hasFile('video')) {
 
-    return view('video',['video' => $video]);
- }
+            Storage::disk('public')->delete('video', $video['video']);
+            Storage::putFile('public/upload', $req->file('video'));
+            $data = $req->file('video')->store('upload');
+            $video->video = $data;
+        }
+        $video->save();
+        return redirect('video');
+
+    }
 
 }

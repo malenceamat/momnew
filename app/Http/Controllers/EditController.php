@@ -36,7 +36,7 @@ class EditController extends Controller
         $data->save();
 
         if ($req['body']) {
-            if ($req['body'] = $data['body']) {
+            if ($req['body'] == $data['body']) {
                 Storage::disk('public')->delete('image', $data['body']);
                 $data ['body'] =
                     Storage::disk('public')->put('image', $req['body']);
