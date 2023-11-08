@@ -31,6 +31,7 @@ var App = function() {
         }
     };
 
+
     var categoryScroll = {
         scrollCat: function() {
             var sidebarWrapper = document.querySelectorAll('.sidebar-wrapper [aria-expanded="true"]')[0];
@@ -183,7 +184,7 @@ var App = function() {
                 toggleFunction.sidebar();
             }
         },
-        
+
         onResize: function() {
             $(window).on('resize', function(event) {
                 event.preventDefault();
@@ -193,7 +194,7 @@ var App = function() {
                 }
             });
         }
-        
+
     }
 
     var _desktopResolution = {
@@ -205,7 +206,7 @@ var App = function() {
                 toggleFunction.onToggleSidebarSubmenu();
             }
         },
-        
+
         onResize: function() {
             $(window).on('resize', function(event) {
                 event.preventDefault();
@@ -215,7 +216,7 @@ var App = function() {
                 }
             });
         }
-        
+
     }
 
     function sidebarFunctionality() {
@@ -290,7 +291,7 @@ var App = function() {
             /*
                 Mobile Resoltion fn
             */
-            _mobileResolution.onRefresh();            
+            _mobileResolution.onRefresh();
             _mobileResolution.onResize();
 
             sidebarFunctionality();

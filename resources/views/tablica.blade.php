@@ -35,7 +35,7 @@
                                             <img src="{{asset('/storage/'. $data['body'])}}" style="float: left; width: 100px; height: 100px; object-fit: cover;">
 
                                         </div>
-
+                                    </td>
                                     <td>{{$data->head}}</td>
                                     <td>{{$data->support}}</td>
                                     <td>{{$data->buttons}}</td>

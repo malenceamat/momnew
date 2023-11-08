@@ -12,6 +12,10 @@
     <link href={{asset("bootstrap/css/bootstrap.min.css")}} rel="stylesheet" type="text/css" />
     <link href={{asset("assets/css/plugins.css")}} rel="stylesheet" type="text/css" />
     <link href={{asset("assets/css/scrollspyNav.css")}} rel="stylesheet" type="text/css" />
+    <link href={{asset("plugins/file-upload/file-upload-with-preview.min.css" )}} rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href={{asset("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css")}}>
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" type="text/css"/>
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" type="text/css"/>
     <!-- END GLOBAL MANDATORY STYLES -->
 
     <!--  BEGIN CUSTOM STYLE FILE  -->
@@ -26,7 +30,7 @@
 
 
 
-
+<script src={{asset("plugins/file-upload/file-upload-with-preview.min.js")}}></script>
 <script src={{asset("assets/js/libs/jquery-3.1.1.min.js")}}></script>
 <script src={{asset("bootstrap/js/popper.min.js")}}></script>
 <script src={{asset("bootstrap/js/bootstrap.min.js")}}></script>
@@ -40,6 +44,15 @@
 </script>
 <script src={{asset("assets/js/custom.js")}}></script>
 <script src={{asset("assets/js/scrollspyNav.js")}}></script>
+<script src={{asset("assets/js/gallery.js")}}></script>
+<script> var secondUpload = new FileUploadWithPreview('mySecondImage') </script>
+<script src={{asset("plugins/select2/custom-select2.js")}}></script>
+<script src={{asset("plugins/select2/select2.min.js")}}></script>
+<script src={{asset("plugins/bootstrap-select/bootstrap-select.min.js")}}></script>
+<script src={{asset("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js")}}></script>
+<script src={{asset("https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")}}></script>
+<script type="text/javascript" src={{asset("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js")}}></script>
+<script type="text/javascript" src={{asset("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js")}}></script>
 
 </body>
 </html>

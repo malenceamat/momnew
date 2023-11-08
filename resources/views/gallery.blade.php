@@ -1,6 +1,10 @@
+
+
 @extends('admin')
 @include('style')
 @include('admin.sidebar')
+
+
 
 <div class="main-container" id="container">
     <div id="content" class="main-content">
@@ -11,11 +15,23 @@
 
 
 
+                                <input type="button" onclick="location.href='/createslide';" value="добавить картинку в раздел" class="btn btn-outline-primary mb-2" />
+                                <input type="button" onclick="location.href='/createrazdel';" value="создать раздел" class="btn btn-outline-primary mb-2" />
+                                <input type="button" onclick="location.href='/galleryedit';" value="Редактировать раздел" class="btn btn-outline-primary mb-2" />
 
 
 
 
-123
+
+
+<br>
+
+                        <br>
+
+вывод галереи
+
+
+
 
 
 
@@ -29,6 +45,3 @@
         </div>
     </div>
 </div>
-
-
-

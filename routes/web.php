@@ -18,6 +18,23 @@ Route::get('/editvideo', function () {
     return view('videoedit');
 });
 
+Route::get('/galleryedit', function () {
+    return view('galleryedit');
+});
+
+Route::get('/createslide', function () {
+    return view('createslide');
+});
+
+Route::get('/redrazdel', function () {
+    return view('redrazdel');
+});
+
+
+Route::get('/createrazdel', function () {
+    return view('createrazdel');
+});
+
 Route::get('/admin', function () {
     return view('admin');
 })->middleware(['auth'])->name('dashboard');
@@ -38,6 +55,6 @@ Route::post('edit',[EditController::class, 'update']);
 Route::get('/video', [VideoController::class, 'video']);
 Route::post('/video', [VideoController::class, 'insert'])->name('video');
 Route::get('video', [VideoController::class, 'qwe']);
-/*Route::get('/video/{id}',[VideoController::class, 'edit']);*/
+
 
 

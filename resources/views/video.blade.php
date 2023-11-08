@@ -1,6 +1,7 @@
 @extends('admin')
 @include('style')
 @include('admin.sidebar')
+@extends('gallery')
 
 
 
@@ -55,8 +56,7 @@
 
 
 
-
-
+@yield('')
 
 
 
@@ -68,3 +68,25 @@
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+        $('#image').change(function(){
+
+            let reader = new FileReader();
+
+            reader.onload = (e) => {
+
+                $('#preview-image-before-upload').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(this.files[0]);
+
+        });
+
+    });
+
+</script>
