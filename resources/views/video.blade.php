@@ -20,7 +20,7 @@
 
                         <form method="POST" action="{{ Route ('video') }}" enctype="multipart/form-data">
 
-                            {{csrf_field()}}
+                           @csrf
                             <div class="col-md-12">
                                 <div class="form-group">
 
