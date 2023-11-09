@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\VideoController;
-
-
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\RazdelController;
 Route::get('/', function () {
     return view('content');
 });
@@ -31,9 +31,14 @@ Route::get('/redrazdel', function () {
 });
 
 
+Route::get('/createimage', function () {
+    return view('createimage');
+});
+
 Route::get('/createrazdel', function () {
     return view('createrazdel');
 });
+
 
 Route::get('/admin', function () {
     return view('admin');
@@ -58,3 +63,13 @@ Route::get('video', [VideoController::class, 'qwe']);
 
 
 
+Route::get('createimage', [GalleryController::class, 'index']);
+Route::post('createimage', [GalleryController::class, 'upload']);
+
+Route::post('createrazdel', [RazdelController::class, 'create']);
+
+Route::get('/galleryedit',[RazdelController::class, 'table']);
+Route::delete('/galleryedit/{delete}',[RazdelController::class, 'delete']);
+
+Route::post('/redrazdel/{edit}',[RazdelController::class, 'edit']);
+Route::post('redrazdel',[RazdelController::class, 'update']);

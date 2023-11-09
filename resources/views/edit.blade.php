@@ -37,7 +37,6 @@
                                     <input type="text" class="form-control" name="buttons" value="{{$data['buttons']}}"> <br> <br>
                                     <input type="text" class="form-control" name="mama" value="{{$data['mama']}}"> <br> <br>
                                     <button class="btn btn-success mb-2">Update</button>
-
                                 </div>
 
                             </form>

@@ -26,7 +26,7 @@
                             <div class="container">
                                 <div class="form-group">
                                     <label>
-                                        <input type="text" class="form-control" name="namerazd" placeholder="Название раздела" value="">
+                                        <input type="text" class="form-control" name="namerazd" placeholder="Название раздела" value="{{$names['name']}}">
                                     </label>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="file">
-                                        <input type="file" name="image" placeholder="Выбрать изображение" id="image" src="">
+                                        <input type="file" name="image" placeholder="Выбрать изображение" id="image" src="" >
                                     </label>
                                     @error('image')
                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -47,7 +47,7 @@
                             </div>
                             <div class="container mt-3">
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-success" id="t123ext">Отправить</button>
+                                    <button type="submit"  class="btn btn-success">Отправить</button>
                                 </div>
                             </div>
                         </form>
@@ -57,7 +57,7 @@
 
                     вывод всех фоток в разделе
 
-                        @include('contact.gallery')
+
 
 
 

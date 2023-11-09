@@ -12,7 +12,6 @@
     @include('contact.about')
     @include('contact.process')
     @include('contact.gallery')
-
 @endsection
 
 
