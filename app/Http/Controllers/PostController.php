@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PostRequest;
+use App\Models\gallery;
 use App\Models\Photo;
 
 use Illuminate\Support\Facades\Storage;
@@ -55,7 +56,6 @@ class PostController extends Controller
         return view('slider', ['photos' => $photos])->with('status', 'Изображение было загружено');
 
     }
-
 
 
 

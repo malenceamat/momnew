@@ -29,6 +29,6 @@ class Videos extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('video');
     }
 }

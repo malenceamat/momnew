@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 
+use App\Models\gallery;
 use App\Models\sliders;
 use App\Models\Video;
 use Illuminate\Http\Request;
@@ -31,6 +32,7 @@ class VideoController extends Controller
         $video =Video::firstOrCreate();
         return view('video', ['video' => $video]);
     }
+
 
     public function insert(Request $req)
     {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PostRequest;
+use App\Models\gallery;
 use App\Models\Photo;
 use App\Models\sliders;
 use Illuminate\Http\Request;
@@ -19,6 +20,9 @@ class EditController extends Controller
 
 
     }
+
+
+
 
     public function update(Request $req)
     {
@@ -43,8 +47,13 @@ class EditController extends Controller
             }
         }
         $data->save();
+
+
+
+
+
         return redirect('tablica');
-        }
+    }
 }
 
 

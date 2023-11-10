@@ -33,6 +33,6 @@ class Slider extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('slider');
     }
 }

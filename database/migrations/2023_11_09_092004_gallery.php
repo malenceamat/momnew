@@ -14,7 +14,7 @@ class Gallery extends Migration
     public function up()
     {
         Schema::create('gallery', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('image');
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ class Gallery extends Migration
      */
     public function down()
     {
-        Schema::drop('gallery');
+        Schema::dropIfExists('gallery');
     }
 }

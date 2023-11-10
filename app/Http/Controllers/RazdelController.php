@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 
 
+
 use App\Models\sliders;
 use Illuminate\Http\Request;
 use App\Models\razdel;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class RazdelController extends Controller
@@ -14,11 +16,20 @@ class RazdelController extends Controller
     public function create(Request $req)
     {
 
-        $name = new razdel();
+        /*$name = new razdel();
         $name->name = $req->input('textrazdel'); // Присваиваем текст из запроса полю с контентом
-        $name->save();
+        $name->save();*/
+
+        $razdels = razdel::find(3);
+
+        foreach ($razdels->gallery as $item) {
+            echo $item->pivot->gallery_id;
+        }
+
+
 
         return redirect('createrazdel');
+
     }
 
 
