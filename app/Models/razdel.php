@@ -9,12 +9,12 @@ class razdel extends Model
 {
     use HasFactory;
 
-    protected $table = 'razdels';
+    protected $table = 'razdel';
     protected $fillable = ['name'];
 
-    public function gallery()
+    public function gallerys()
     {
-        return $this->belongsToMany(gallery::class);
+        return $this->belongsToMany('gallery', 'gallery_razdel', 'razdel_id', 'gallery_id');
     }
 
 }

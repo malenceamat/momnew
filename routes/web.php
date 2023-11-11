@@ -67,7 +67,7 @@ Route::get('createimage', [GalleryController::class, 'index']);
 Route::post('createimage', [GalleryController::class, 'upload']);
 
 Route::post('createrazdel', [RazdelController::class, 'create']);
-
+Route::get('createrazdel', [RazdelController::class, 'create1']);
 Route::get('/galleryedit',[RazdelController::class, 'table']);
 Route::delete('/galleryedit/{delete}',[RazdelController::class, 'delete']);
 

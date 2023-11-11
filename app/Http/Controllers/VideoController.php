@@ -47,6 +47,7 @@ class VideoController extends Controller
             Storage::putFile('public/upload', $req->file('video'));
             $data = $req->file('video')->store('upload');
             $video->video = $data;
+
         }
         $video->save();
         return redirect('video');

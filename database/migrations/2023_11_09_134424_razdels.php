@@ -13,7 +13,7 @@ class Razdels extends Migration
      */
     public function up()
     {
-        Schema::create('razdels', function (Blueprint $table) {
+        Schema::create('razdel', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
             $table->timestamps();
