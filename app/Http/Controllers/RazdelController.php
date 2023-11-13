@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 
 use App\Models\gallery;
 use App\Models\sliders;
+use App\Models\users;
 use Illuminate\Http\Request;
 use App\Models\razdel;
 use Illuminate\Support\Facades\DB;
@@ -30,24 +31,24 @@ class RazdelController extends Controller
     public function create(Request $req)
     {
 
-        $name = new razdel();
+        /*$name = new razdel();
         $name->name = $req->input('textrazdel'); // Присваиваем текст из запроса полю с контентом
+        $name->save();*/
 
 
-        if ($req ->input('gallery')) :
-            $name->gallerys()->attach($req->input('gallery'));
-        endif;
-        $name->save();
+
+        /*$roles = users::find(1)->roles()->get();
+        dd($roles);*/
+        $user = users::find(3); // Получаем экземпляр модели пользователя
+        $roleIds = [4]; // ID ролей, которые нужно присвоить пользователю
+
+        $user->roles()->attach($roleIds);
 
         return redirect('createrazdel');
 
 
-
-
-
-
-
     }
+
 
 
 

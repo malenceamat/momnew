@@ -15,6 +15,7 @@ class razdel extends Model
     public function gallerys()
     {
         return $this->belongsToMany('gallery', 'gallery_razdel', 'razdel_id', 'gallery_id');
+        /*return $this->belongsToMany(gallery::class);*/
     }
 
 }
