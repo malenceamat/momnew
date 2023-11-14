@@ -31,18 +31,14 @@ class RazdelController extends Controller
     public function create(Request $req)
     {
 
-        /*$name = new razdel();
+        $name = new razdel();
         $name->name = $req->input('textrazdel'); // Присваиваем текст из запроса полю с контентом
-        $name->save();*/
+        $name->save();
 
 
 
-        /*$roles = users::find(1)->roles()->get();
-        dd($roles);*/
-        $user = users::find(3); // Получаем экземпляр модели пользователя
-        $roleIds = [4]; // ID ролей, которые нужно присвоить пользователю
 
-        $user->roles()->attach($roleIds);
+
 
         return redirect('createrazdel');
 
@@ -84,11 +80,42 @@ class RazdelController extends Controller
     {
 
         $names = razdel::find($req->id);
-        $names->name = $req->name;
+        $names->name = $req->input('namerazd'); // Присваиваем текст из запроса полю с контентом
 
+        $this->validate($req, [
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
+        Storage::put('/images', $req->file('image'));
+        $req->file('image')->getClientOriginalName();
+        $path = $req->file('image')->store('images');
+
+        $qwe = gallery::create([
+            'image' => $path
+        ]);
+
+        $names->gallerys()->attach($qwe->id);
         $names->save();
-        return redirect('redrazdel');
+
+        return redirect('galleryedit');
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

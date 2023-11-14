@@ -70,6 +70,8 @@ Route::post('createrazdel', [RazdelController::class, 'create']);
 Route::get('createrazdel', [RazdelController::class, 'create1']);
 Route::get('/galleryedit',[RazdelController::class, 'table']);
 Route::delete('/galleryedit/{delete}',[RazdelController::class, 'delete']);
-
+Route::get('/galleryedit/{update}',[RazdelController::class, 'edit']);
 Route::post('/redrazdel/{edit}',[RazdelController::class, 'edit']);
 Route::post('redrazdel',[RazdelController::class, 'update']);
+
+/*Route::post('redrazdel', [RazdelController::class, 'foto']);*/

@@ -28,6 +28,7 @@ class EditController extends Controller
     {
 
         $data = sliders::find($req->id);
+
         $data->head = $req->head;
         $data->support = $req->support;
         $data->buttons = $req->buttons;

@@ -22,14 +22,16 @@
 
 
 
-                        <form action="#" method="POST" id="#" enctype="multipart/form-data">
+                        <form action="/redrazdel" method="POST" enctype="multipart/form-data">
                             <div class="container">
                                 <div class="form-group">
+                                    <input type="hidden" name="id" value="{{$names['id']}}">
                                     <label>
                                         <input type="text" class="form-control" name="namerazd" placeholder="Название раздела" value="{{$names['name']}}">
                                     </label>
                                 </div>
                             </div>
+
 
                             @csrf
                             <div class="col-md-12">
