@@ -7,15 +7,13 @@
             <div class="row layout-top-spacing" id="cancel-row">
                 <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                     <div class="widget-content widget-content-area br-6">
+                        <div class="row">
 
 
 
 
 
-<div class="row">
-
-                        <form action="#" method="POST" id="#" enctype="multipart/form-data">
-
+                        <form action="/createslide" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -35,28 +33,17 @@
                                         <button type="submit" class="btn btn-success" id="t123ext">Отправить</button>
                                     </div>
                                 </div>
+                            <div class="container mt-5">
+                                <p>Выбор раздела</p>
+                                <label>
+                                    <select id="example-getting-started" multiple="multiple">
+                                       @foreach($data as $ke)
+                                        <option value="{{$ke['id']}}">{{$ke['name']}}</option>
+                                           @endforeach
+                                    </select>
+                                </label>
+                            </div>
                         </form>
-                        <div class="container mt-5">
-                            <p>Выбор раздела</p>
-                            <label>
-                                <select id="example-getting-started" multiple="multiple">
-                                    <option value="cheese">Раздел 1</option>
-                                    <option value="tomatoes">Раздел 2</option>
-                                    <option value="mozarella">Раздел 3</option>
-                                    <option value="mushrooms">Раздел 4</option>
-                                    <option value="pepperoni">Раздел 5</option>
-                                    <option value="onions">Раздел 6</option>
-                                </select>
-                            </label>
-                        </div>
-
-
-
-
-
-
-
-</div>
 
 
 
@@ -80,6 +67,7 @@
 
 
 
+                       </div>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\gallery;
 use Illuminate\Http\Request;
 use App\Models\razdel;
@@ -29,45 +28,34 @@ class RazdelController extends Controller
         $names = razdel::get();
         return view('galleryedit', ['names' => $names]);
     }
-
     public function delete($id)
     {
         $delete = razdel::find($id);
         $delete->delete();
         return redirect('/galleryedit');
     }
-
     public function edit($id)
     {
         $names = razdel::find($id);
         return view('redrazdel', ['names' => $names]);
     }
-
     public function update(Request $req)
     {
         $names = razdel::find($req->id);
         $names->name = $req->input('namerazd'); // Присваиваем текст из запроса полю с контентом
-
         $this->validate($req, [
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
-
         Storage::put('public/images', $req->file('image'));
         $req->file('image')->getClientOriginalName();
         $path = $req->file('image')->store('images');
-
         $qwe = gallery::create([
             'image' => $path
         ]);
-
         $names->gallerys()->attach($qwe->id);
-
         $names->save();
-        //rabotaet
-
         return redirect('/galleryedit');
     }
-
     public function update1(Request $req)
     {
         $gallerys = razdel::find($req->id);
@@ -79,5 +67,11 @@ class RazdelController extends Controller
         $names = gallery::find($id);
         $names->razdels()->detach();
         return redirect('/galleryedit');
+    }
+    public function formcr()
+    {
+        $data = razdel::all();
+
+        return view('createslide',['data' => $data]);
     }
 }

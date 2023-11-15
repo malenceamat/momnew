@@ -26,20 +26,15 @@ class EditController extends Controller
 
     public function update(Request $req)
     {
-
         $data = sliders::find($req->id);
-
         $data->head = $req->head;
         $data->support = $req->support;
         $data->buttons = $req->buttons;
         $data->mama = $req->mama;
-
         if ($req->hasFile('image')) {
             $data = $req->file('image');
         }
-
         $data->save();
-
         if ($req['body']) {
             if ($req['body'] == $data['body']) {
                 Storage::disk('public')->delete('image', $data['body']);
@@ -48,11 +43,6 @@ class EditController extends Controller
             }
         }
         $data->save();
-
-
-
-
-
         return redirect('tablica');
     }
 }

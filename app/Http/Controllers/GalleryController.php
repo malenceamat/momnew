@@ -5,17 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use  App\Models\gallery;
 use Illuminate\Support\Facades\Storage;
-
 class GalleryController extends Controller
 {
     public function index()
     {
         $images = gallery::get();
-        return view('createimage', compact('images'));
+        return view('allimage', compact('images'));
 
     }
-
-
     public function upload(Request $request)
     {
         $this->validate($request, [
@@ -30,12 +27,8 @@ class GalleryController extends Controller
              'image' => $path
          ]);
 
-        return redirect('createimage');
+        return redirect('allimage');
     }
-
-
-
-
 
 
 

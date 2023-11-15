@@ -22,14 +22,11 @@ Route::get('/galleryedit', function () {
     return view('galleryedit');
 });
 
-Route::get('/createslide', function () {
-    return view('createslide');
-});
+Route::get('/createslide', [RazdelController::class, 'formcr']);
 
 Route::get('/redrazdel', function () {
     return view('redrazdel');
 });
-
 
 Route::get('/createimage', function () {
     return view('createimage');
@@ -38,7 +35,6 @@ Route::get('/createimage', function () {
 Route::get('/createrazdel', function () {
     return view('createrazdel');
 });
-
 
 Route::get('/admin', function () {
     return view('admin');
@@ -62,8 +58,8 @@ Route::post('/video', [VideoController::class, 'insert'])->name('video');
 Route::get('video', [VideoController::class, 'qwe']);
 
 
-Route::get('createimage', [GalleryController::class, 'index']);
-Route::post('createimage', [GalleryController::class, 'upload']);
+Route::get('allimage', [GalleryController::class, 'index']);
+Route::post('allimage', [GalleryController::class, 'upload']);
 
 Route::post('createrazdel', [RazdelController::class, 'create']);
 Route::get('createrazdel', [RazdelController::class, 'create1']);
@@ -72,7 +68,8 @@ Route::delete('/galleryedit/{delete}',[RazdelController::class, 'delete']);
 Route::post('/redrazdel/{edit}',[RazdelController::class, 'edit']);
 Route::post('/redrazdel',[RazdelController::class, 'update']);
 Route::post('/galleryedit/{update}',[RazdelController::class, 'update1']);
-
-
-
 Route::delete('/redrazdel/{delete}',[RazdelController::class, 'delete1']);
+
+
+
+
