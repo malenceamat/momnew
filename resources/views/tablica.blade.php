@@ -30,10 +30,7 @@
                                     <td>{{$data->id}}</td>
                                     <td>
                                         <div class="container mt-0" id="sem">
-
-
                                             <img src="{{asset('/storage/'. $data['body'])}}" style="float: left; width: 100px; height: 100px; object-fit: cover;">
-
                                         </div>
                                     </td>
                                     <td>{{$data->head}}</td>

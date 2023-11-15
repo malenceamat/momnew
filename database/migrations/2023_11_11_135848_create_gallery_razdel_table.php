@@ -14,6 +14,7 @@ class CreateGalleryRazdelTable extends Migration
     public function up()
     {
         Schema::create('gallery_razdel', function (Blueprint $table) {
+            $table->id();
             $table->integer('gallery_id');
             $table->integer('razdel_id');
             $table->timestamps();

@@ -1,5 +1,5 @@
 
-@extends('admin')
+
 @include('style')
 @include('admin.sidebar')
 
@@ -11,18 +11,8 @@
                 <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                     <div class="widget-content widget-content-area br-6">
 
-
-
-
-
-
-
-
-
-
-
-
                         <form action="/redrazdel" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="container">
                                 <div class="form-group">
                                     <input type="hidden" name="id" value="{{$names['id']}}">
@@ -31,9 +21,6 @@
                                     </label>
                                 </div>
                             </div>
-
-
-                            @csrf
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="file">
@@ -57,7 +44,58 @@
 
 
 
-                    вывод всех фоток в разделе
+                        <table id="zero-config" class="table dt-table-hover" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Image</th>
+                                <th class="no-content">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($names->gallerys as $user)
+                                <tr>
+                                    <td>{{$user->id}}</td>
+                                    <td>
+                                        <div class="container mt-0" id="sem">
+                                            <img src="{{asset('/storage/'. $user['image'])}}" style="float: left; width: 100px; height: 100px; object-fit: cover;">
+                                        </div>
+                                    </td>
+                                    <td> <form method="POST" action="/redrazdel/{{$user->id}}">
+                                            {{method_field('DELETE')}}
+                                            {{csrf_field()}}
+                                            <button class="btn btn-danger mb-2">Delete</button>
+                                        </form>
+                                        @endforeach
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
