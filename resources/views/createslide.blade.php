@@ -10,11 +10,8 @@
                         <div class="row">
 
 
-
-
-
-                        <form action="/createslide" method="POST" enctype="multipart/form-data">
-                            @csrf
+                  <form action="/createslide" method="POST" enctype="multipart/form-data">
+                                      @csrf
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="file">
@@ -28,23 +25,23 @@
                             <div class="col-md-12 mb-2">
                                 <img id="preview-image-before-upload" src={{asset("images/product_image_not_found.gif")}} alt="" style="max-height: 250px;" alt="">
                             </div>
-                                <div class="container mt-3">
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-success" id="t123ext">Отправить</button>
-                                    </div>
-                                </div>
-                            <div class="container mt-5">
-                                <p>Выбор раздела</p>
-                                <label>
-                                    <select id="example-getting-started" multiple="multiple">
-                                       @foreach($data as $ke)
-                                        <option value="{{$ke['id']}}">{{$ke['name']}}</option>
-                                           @endforeach
-                                    </select>
-                                </label>
-                            </div>
-                        </form>
 
+                      <div class="container mt-5">
+                          <p>Выбор раздела</p>
+                          <label>
+                              <select id="example-getting-started" name="categories[]" multiple>
+                                  @foreach($data as $ke)
+                                      <option value="{{$ke->id}}">{{$ke->name}}</option>
+                                  @endforeach
+                              </select>
+                          </label>
+                      </div>
+                      <div class="container mt-3">
+                          <div class="input-group-append">
+                              <button type="submit" class="btn btn-success">Отправить</button>
+                          </div>
+                      </div>
+                  </form>
 
 
 

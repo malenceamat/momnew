@@ -20,18 +20,16 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($names as $name)
-
-
+                            @foreach($names as $fotka)
                             <tr>
-                                <td>{{$name->id}}</td>
-                                <td>{{$name->name}}</td>
-                                <td> <form method="POST" action="/galleryedit/{{$name->id}}">
+                                <td>{{$fotka->id}}</td>
+                                <td>{{$fotka->name}}</td>
+                                <td> <form method="POST" action="/galleryedit/{{$fotka->id}}">
                                         {{method_field('DELETE')}}
                                         {{csrf_field()}}
                                         <button class="btn btn-danger mb-2">Delete</button>
                                     </form>
-                                    <form method="POST" action="/redrazdel/{{$name->id}}">
+                                    <form method="POST" action="/redrazdel/{{$fotka->id}}">
                                         @csrf
                                         <button class="btn btn-primary mb-2">Edit</button>
                                     </form>

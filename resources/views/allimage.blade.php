@@ -14,38 +14,31 @@
 
 
 
-
-                        <form action="/createimage" method="POST"  enctype="multipart/form-data">
-                            @csrf
-                            <div id="fuSingleFile" class="col-lg-12 layout-spacing">
-                                <div class="statbox widget box box-shadow">
-                                    <div class="widget-header">
-                                        <div class="row">
-                                            <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                                <h4>Single File Upload</h4>
-                                            </div>
+                        <table id="zero-config" class="table dt-table-hover" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th class="no-content">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($vsefotki as $data)
+                                <tr>
+                                    <td>
+                                        <div class="container mt-0" id="sem">
+                                            <img src="{{asset('/storage/'. $data['image'])}}" style="float: left; width: 100px; height: 100px; object-fit: cover;">
                                         </div>
-                                    </div>
-                                    <div class="widget-content widget-content-area">
-                                        <div class="custom-file-container" data-upload-id="myFirstImage">
-                                            <label>Upload (Single File) <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image">x</a></label>
-                                            <label class="custom-file-container__custom-file" >
-                                                <input type="file" name="image" class="custom-file-container__custom-file__custom-file-input" accept="image/*">
-                                                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
-                                                <span class="custom-file-container__custom-file__custom-file-control"></span>
-                                            </label>
-                                            <div class="custom-file-container__image-preview"></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-success" id="razdel">Отправить</button>
-                                </div>
-
-                        </form>
+                                    </td>
+                                    <td> <form method="POST" action="/allimage/{{$data->id}}">
+                                            {{method_field('DELETE')}}
+                                            {{csrf_field()}}
+                                            <button class="btn btn-danger mb-2">Delete</button>
+                                        </form>
+                                        @endforeach
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
 
 
 

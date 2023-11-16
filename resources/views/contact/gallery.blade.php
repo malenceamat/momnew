@@ -8,84 +8,45 @@
         <div class="cbp-panel">
             <div id="filters-container" class="cbp-filter-container text-center">
                 <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All </div>
-                <div data-filter=".print" class="cbp-filter-item"> Print </div>
-                <div data-filter=".web" class="cbp-filter-item"> Web Design </div>
-                <div data-filter=".logo" class="cbp-filter-item"> Logo </div>
-                <div data-filter=".motion" class="cbp-filter-item"> Motion </div>
+                @foreach($vsefotki as $d)
+                    <div data-filter=".print" class="cbp-filter-item">{{$d['name']}}</div>
+                @endforeach
             </div>
+
             <div id="grid-container" class="cbp">
-                <div class="cbp-item print motion"> <a href="ajax/project1.html" class="cbp-caption cbp-singlePageInline">
-                        <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p1.jpg" alt="" /> </div>
-                        <div class="cbp-caption-activeWrap">
-                            <div class="cbp-l-caption-alignCenter">
-                                <div class="cbp-l-caption-body">
-                                    <div class="cbp-l-caption-title">Malesuada Parturient</div>
-                                    <div class="cbp-l-caption-desc">Print, Motion</div>
+                @foreach($vsefotki as $data)
+                        <div class="cbp-item web logo">
+                            <div class="cbp-caption-defaultWrap">  <img src="{{asset('/storage/'. $data['image'])}}" alt="" /></div>
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignCenter">
+                                    <div class="cbp-l-caption-body">
+                                        <div class="cbp-l-caption-title">Tellus Nibh</div>
+                                        <div class="cbp-l-caption-desc">Web Design</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a> </div>
-                <!--/.cbp-item -->
-                <div class="cbp-item web logo"> <a href="ajax/project2.html" class="cbp-caption cbp-singlePageInline">
-                        <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p2.jpg" alt="" /> </div>
-                        <div class="cbp-caption-activeWrap">
-                            <div class="cbp-l-caption-alignCenter">
-                                <div class="cbp-l-caption-body">
-                                    <div class="cbp-l-caption-title">Tellus Nibh</div>
-                                    <div class="cbp-l-caption-desc">Web Design</div>
+                         </div>
+                @endforeach
+          {{--      @foreach($data as $user)
+                            <div class="cbp-item web logo">
+                                    <div class="cbp-caption-defaultWrap"> <img src="{{asset('/storage/'. $user->gallerys)}}" alt="" /></div>
+                                    <div class="cbp-caption-activeWrap">
+                                        <div class="cbp-l-caption-alignCenter">
+                                            <div class="cbp-l-caption-body">
+                                                <div class="cbp-l-caption-title">Tellus Nibh</div>
+                                                <div class="cbp-l-caption-desc">Web Design</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </a> </div>
-                <!--/.cbp-item -->
-                <div class="cbp-item print motion"> <a href="ajax/project3.html" class="cbp-caption cbp-singlePageInline">
-                        <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p3.jpg" alt="" /> </div>
-                        <div class="cbp-caption-activeWrap">
-                            <div class="cbp-l-caption-alignCenter">
-                                <div class="cbp-l-caption-body">
-                                    <div class="cbp-l-caption-title">Pellentesque Mattis</div>
-                                    <div class="cbp-l-caption-desc">Print, Motion</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a> </div>
-                <!--/.cbp-item -->
-                <div class="cbp-item web print"> <a href="ajax/project4.html" class="cbp-caption cbp-singlePageInline">
-                        <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p4.jpg" alt="" /> </div>
-                        <div class="cbp-caption-activeWrap">
-                            <div class="cbp-l-caption-alignCenter">
-                                <div class="cbp-l-caption-body">
-                                    <div class="cbp-l-caption-title">Euismod Pharetra</div>
-                                    <div class="cbp-l-caption-desc">Web Design, Print</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a> </div>
-                <!--/.cbp-item -->
-                <div class="cbp-item motion logo"> <a href="ajax/project5.html" class="cbp-caption cbp-singlePageInline">
-                        <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p5.jpg" alt="" /> </div>
-                        <div class="cbp-caption-activeWrap">
-                            <div class="cbp-l-caption-alignCenter">
-                                <div class="cbp-l-caption-body">
-                                    <div class="cbp-l-caption-title">Fringilla Nullam</div>
-                                    <div class="cbp-l-caption-desc">Motion</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a> </div>
-                <!--/.cbp-item -->
-                <div class="cbp-item print motion"> <a href="ajax/project6.html" class="cbp-caption cbp-singlePageInline">
-                        <div class="cbp-caption-defaultWrap"> <img src="style/images/art/p6.jpg" alt="" /> </div>
-                        <div class="cbp-caption-activeWrap">
-                            <div class="cbp-l-caption-alignCenter">
-                                <div class="cbp-l-caption-body">
-                                    <div class="cbp-l-caption-title">Pharetra Sem</div>
-                                    <div class="cbp-l-caption-desc">Print, Motion</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a> </div>
-                <!--/.cbp-item -->
+                @endforeach--}}
+
+
+
+
+
+
+
             </div>
             <!--/.cbp -->
             <div class="divide30"></div>

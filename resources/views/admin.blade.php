@@ -20,7 +20,7 @@
 </head>
 <body class="sidebar-noneoverflow" data-spy="scroll" data-target="#navSection" data-offset="140">
 
-$roles = User::find(1)->roles()->orderBy('name')->get();
+
 
 
 

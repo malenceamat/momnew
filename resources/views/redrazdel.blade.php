@@ -40,10 +40,6 @@
                                 </div>
                             </div>
                         </form>
-
-
-
-
                         <table id="zero-config" class="table dt-table-hover" style="width:100%">
                             <thead>
                             <tr>

@@ -21,7 +21,7 @@ class RazdelController extends Controller
         $name = new razdel();
         $name->name = $req->input('textrazdel'); // Присваиваем текст из запроса полю с контентом
         $name->save();
-        return redirect('createrazdel');
+        return redirect('galleryedit');
     }
     public function table()
     {
@@ -67,11 +67,5 @@ class RazdelController extends Controller
         $names = gallery::find($id);
         $names->razdels()->detach();
         return redirect('/galleryedit');
-    }
-    public function formcr()
-    {
-        $data = razdel::all();
-
-        return view('createslide',['data' => $data]);
     }
 }
