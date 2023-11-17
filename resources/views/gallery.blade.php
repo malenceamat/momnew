@@ -21,7 +21,7 @@
         padding: 15px;
     }
 </style>
-<div class="main-container" id="container">
+
     <div id="content" class="main-content">
         <div class="layout-px-spacing">
             <div class="row layout-top-spacing" id="cancel-row">

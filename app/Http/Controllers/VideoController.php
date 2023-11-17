@@ -13,45 +13,32 @@ use Illuminate\Support\Facades\Storage;
 
 class VideoController extends Controller
 {
-
     public function edit($id)
     {
         $content = Video::find($id);
         return view('video', compact('content'));
     }
-
  public function video()
  {
      return view('video');
  }
-
-
     public function qwe()
     {
-
         $video =Video::firstOrCreate();
         return view('video', ['video' => $video]);
     }
-
-
     public function insert(Request $req)
     {
         $video = Video::find(1);
         $video->Text = $req->Text;
         $video->SmallText = $req->SmallText;
-
-
         if (!empty($video) && $req->hasFile('video')) {
-
             Storage::disk('public')->delete('video', $video['video']);
             Storage::putFile('public/upload', $req->file('video'));
             $data = $req->file('video')->store('upload');
             $video->video = $data;
-
         }
         $video->save();
         return redirect('video');
-
     }
-
 }

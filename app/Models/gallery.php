@@ -11,8 +11,6 @@ class gallery extends Model
 
     protected $table = 'gallery';
     protected $fillable = ['image'];
-
-
     public function razdels()
     {
         return $this->belongsToMany(razdel::class, 'gallery_razdel', 'gallery_id', 'razdel_id');

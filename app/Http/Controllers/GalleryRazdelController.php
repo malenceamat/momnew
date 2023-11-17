@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\gallery;
 use App\Models\razdel;
-use App\Models\sliders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 

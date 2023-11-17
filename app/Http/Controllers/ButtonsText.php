@@ -12,7 +12,5 @@ class ButtonsText extends Controller
         $text = $req->text;
         return DB::table('posts')->insert(['text' => $text]);
     }
-
-
 }
 

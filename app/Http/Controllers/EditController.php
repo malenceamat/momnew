@@ -20,10 +20,6 @@ class EditController extends Controller
 
 
     }
-
-
-
-
     public function update(Request $req)
     {
         $data = sliders::find($req->id);

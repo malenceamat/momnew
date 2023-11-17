@@ -8,33 +8,29 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\RazdelController;
 use App\Http\Controllers\GalleryRazdelController;
 Route::get('/', [GalleryRazdelcontroller::class, 'osnova1']);
-
 Route::get('/tablica', function () {
     return view('tablica');
+});
+Route::get('/hueta', function (){
+   return view('hueta');
 });
 
 Route::get('/editvideo', function () {
     return view('videoedit');
 });
-
 Route::get('/galleryedit', function () {
     return view('galleryedit');
 });
-
 Route::get('/createslide', [GalleryRazdelcontroller::class, 'formcr']);
-
 Route::get('/redrazdel', function () {
     return view('redrazdel');
 });
-
 Route::get('/createimage', function () {
     return view('createimage');
 });
-
 Route::get('/createrazdel', function () {
     return view('createrazdel');
 });
-
 Route::get('/admin', function () {
     return view('admin');
 })->middleware(['auth'])->name('dashboard');
@@ -66,11 +62,6 @@ Route::post('createslide', [GalleryRazdelController::class, 'sova']);
 Route::get('/allimage', [GalleryRazdelcontroller::class, 'poezd']);
 Route::delete('/allimage/{delete}',[GalleryRazdelcontroller::class, 'srem']);
 
-
-
-
-
-
-
-
 require __DIR__.'/auth.php';
+
+

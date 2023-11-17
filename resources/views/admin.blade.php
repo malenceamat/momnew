@@ -20,7 +20,9 @@
 </head>
 <body class="sidebar-noneoverflow" data-spy="scroll" data-target="#navSection" data-offset="140">
 
-
+<div class="main-container">
+    @include('admin.sidebar')
+</div>
 
 
 
