@@ -17,4 +17,9 @@ class razdel extends Model
         return $this->belongsToMany(gallery::class, 'gallery_razdel', 'razdel_id', 'gallery_id');
     }
 
+    public function yabida()
+    {
+     return $this->hasManyThrough(gallery::class, razdel::class);
+    }
+
 }

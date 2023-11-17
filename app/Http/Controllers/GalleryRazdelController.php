@@ -14,7 +14,6 @@ class GalleryRazdelController extends Controller
     {
         $data = razdel::all();
         return view('createslide',['data' => $data]);
-
     }
     public function sova(Request $req)
     {
@@ -45,10 +44,7 @@ class GalleryRazdelController extends Controller
     }
     public function osnova1()
     {
-        $vsefotki = razdel::find(1);
-        $role = $vsefotki->gallerys;
-        dd($role);
+        $vsefotki = razdel::with('gallerys')->get();
         return view ('content',['vsefotki' => $vsefotki]);
     }
-
 }
