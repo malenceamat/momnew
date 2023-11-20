@@ -15,6 +15,13 @@ Route::get('/hueta', function (){
    return view('hueta');
 });
 
+Route::get('/reg', function (){
+    return view('adminka.reg');
+});
+Route::get('/svyaz', function (){
+    return view('contact.svyaz');
+});
+
 Route::get('/editvideo', function () {
     return view('videoedit');
 });

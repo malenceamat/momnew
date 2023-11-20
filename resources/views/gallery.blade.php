@@ -1,6 +1,6 @@
 @extends('admin')
 @include('style')
-@include('admin.sidebar')
+
 
 
 <style type="text/css">
@@ -21,7 +21,8 @@
         padding: 15px;
     }
 </style>
-
+<div class="main-container" id="container">
+    @include('admin.sidebar')
     <div id="content" class="main-content">
         <div class="layout-px-spacing">
             <div class="row layout-top-spacing" id="cancel-row">

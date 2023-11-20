@@ -18,10 +18,12 @@
     <link rel="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" type="text/css"/>
     <link href={{asset("/assets/css/elements/color_library.css")}} rel="stylesheet" type="text/css" />
 </head>
-<body class="sidebar-noneoverflow" data-spy="scroll" data-target="#navSection" data-offset="140">
+<div class="main-container" id="container">
 
-<div class="main-container">
-    @include('admin.sidebar')
+
+    @yield('qwe')
+
+
 </div>
 
 
@@ -52,5 +54,5 @@
 <script src={{asset("https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")}}></script>
 <script type="text/javascript" src={{asset("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js")}}></script>
 <script type="text/javascript" src={{asset("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js")}}></script>
-</body>
+
 </html>

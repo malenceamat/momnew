@@ -1,10 +1,12 @@
 @extends('admin')
 @include('style')
-@include('admin.sidebar')
 
 
 
+
+@section('qwe')
 <div class="main-container" id="container">
+    @include('admin.sidebar')
     <div id="content" class="main-content">
         <div class="container mt-5">
 
@@ -53,3 +55,4 @@
     </div>
 </div>
 
+@endsection
