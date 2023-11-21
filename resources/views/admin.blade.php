@@ -14,9 +14,12 @@
     <link href={{asset("assets/css/scrollspyNav.css")}} rel="stylesheet" type="text/css" />
     <link href={{asset("plugins/file-upload/file-upload-with-preview.min.css" )}} rel="stylesheet" type="text/css">
     <link rel="stylesheet" href={{asset("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css")}}>
-    <link rel="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" type="text/css"/>
-    <link rel="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" type="text/css"/>
+    <link rel={{asset("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css")}} type="text/css"/>
+    <link rel={{asset("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css")}} type="text/css"/>
     <link href={{asset("/assets/css/elements/color_library.css")}} rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href={{asset("plugins/table/datatable/datatables.css")}}>
+    <link rel="stylesheet" type="text/css" href={{asset("plugins/table/datatable/dt-global_style.css")}}>
+
 </head>
 <div class="main-container" id="container">
 
@@ -54,5 +57,6 @@
 <script src={{asset("https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")}}></script>
 <script type="text/javascript" src={{asset("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js")}}></script>
 <script type="text/javascript" src={{asset("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js")}}></script>
+
 
 </html>

@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\PostController;
+use App\Models\Registration;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\EditController;
@@ -7,20 +8,14 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\RazdelController;
 use App\Http\Controllers\GalleryRazdelController;
+use App\Http\Controllers\RegistrationController;
 Route::get('/', [GalleryRazdelcontroller::class, 'osnova1']);
 Route::get('/tablica', function () {
     return view('tablica');
 });
-Route::get('/hueta', function (){
-   return view('hueta');
-});
 
-Route::get('/reg', function (){
-    return view('adminka.reg');
-});
-Route::get('/svyaz', function (){
-    return view('contact.svyaz');
-});
+
+Route::get('/svyaz',[RegistrationController::class, 'index']);
 
 Route::get('/editvideo', function () {
     return view('videoedit');
@@ -69,6 +64,13 @@ Route::post('createslide', [GalleryRazdelController::class, 'sova']);
 Route::get('/allimage', [GalleryRazdelcontroller::class, 'poezd']);
 Route::delete('/allimage/{delete}',[GalleryRazdelcontroller::class, 'srem']);
 
+
+Route::post('/svyaz', [RegistrationController::class, 'input']);
+
+Route::get('/reg',[RegistrationController::class, 'table']);
+Route::get('/hueta', [RegistrationController::class, 'index2']);
+Route::delete('/reg/{delete}',[RegistrationController::class, 'delete']);
+Route::get('autocomplete', [RegistrationController::class, 'autocomplete'])->name('autocomplete');
 require __DIR__.'/auth.php';
 
 

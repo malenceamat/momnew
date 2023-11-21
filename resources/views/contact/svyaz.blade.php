@@ -18,8 +18,8 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src={{asset("https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js")}}></script>
+    <script src={{asset("https://oss.maxcdn.com/respond/1.4.2/respond.min.js")}}></script>
     <![endif]-->
 </head>
 <body>
@@ -36,7 +36,8 @@
                 <p>Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus.</p>
                 <div class="divide10"></div>
                 <div class="form-container">
-                    <form action={{asset("contact/vanilla-form.php")}} method="post" class="vanilla vanilla-form" novalidate="novalidate">
+                    <form action=/svyaz method="POST" class="vanilla vanilla-form" novalidate="novalidate">
+                        @csrf
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-field">
@@ -66,11 +67,9 @@
                                 <div class="form-field">
                                     <label class="custom-select">
                                         <select name="department" required="required">
-                                            <option value="">Select Department</option>
-                                            <option value="Sales">Sales</option>
-                                            <option value="Marketing">Marketing</option>
-                                            <option value="Support">Customer Support</option>
-                                            <option value="Other">Other</option>
+                                            <option value="Закупка">Закупка</option>
+                                            <option value="Маркетинг">Маркетинг</option>
+                                            <option value="Другое">Другое</option>
                                         </select>
                                         <i class="icon-ok"></i><span></span>
                                     </label>
@@ -78,17 +77,6 @@
                             </div>
                         </div>
                         <textarea name="message" placeholder="Type your message here..."></textarea>
-                        <div class="radio-set">
-                            <label>Subject:</label>
-                            <label>
-                                <input type="radio" name="subject" value="General">
-                                <span></span> General
-                            </label>
-                            <label>
-                                <input type="radio" name="subject" value="Other">
-                                <span></span> Other
-                            </label>
-                        </div>
                         <input type="submit" class="btn" value="Send" data-error="Fix errors" data-processing="Sending..." data-success="Thank you!">
                     </form>
                 </div>

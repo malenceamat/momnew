@@ -43,14 +43,14 @@
                     <a href="#components" data-toggle="collapse" aria-expanded="{{ (request()->is('reg')) ? 'true' : '' }}" class="dropdown-toggle">
                         <div class="3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-                            <span>Components</span>
+                            <span>Пользователь</span>
                         </div>
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
                         </div>
                     </a>
-                    <ul class="collapse submenu list-unstyled" id="components" data-parent="#accordionExample">
-                        <li class="{{ Request::path() == 'reg' ? 'active' : '' }}">
+                    <ul class="collapse submenu list-unstyled {{ (request()->is('reg')) ? 'collapse show' : '' }}" id="components" data-parent="#accordionExample">
+                        <li class="{{ (request()->is('reg')) ? 'active' : '' }}">
                             <a href="/reg"> Регистрация пользователя</a>
                         </li>
                     </ul>

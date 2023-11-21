@@ -13,15 +13,66 @@
 
 
 
+                        <table id="zero-config" class="table dt-table-hover" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Имя</th>
+                                <th>Телефон</th>
+                                <th>Почта</th>
+                                <th>Цель</th>
+                                <th>Сообщение</th>
+                                <th class="no-content">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($table as $ma)
+                            <tr>
+                                <td>{{$ma->id}}</td>
+                                <td>{{$ma->name}}</td>
+                                <td>{{$ma->phone}}</td>
+                                <td>{{$ma->email}}</td>
+                                <td>{{$ma->select}}</td>
+                                <td>{{$ma->message}}</td>
+                                <td><div class="row">
+                                    <form method="POST" action="/reg/{{$ma->id}}">
+                                        {{method_field('DELETE')}}
+                                        {{csrf_field()}}
+                                        <button class="btn btn-danger mb-2">Удалить</button>
+                                    </form>
+                                    <form method="POST" action="/edit/{{$ma->id}}">
+
+                                        {{csrf_field()}}
+                                        <button class="btn btn-primary mb-2">Подтвердить</button>
+                                    </form>
+                                    </div>
+                            </tr>
+                            @endforeach
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>id</th>
+                                <th>Имя</th>
+                                <th>Телефон</th>
+                                <th>Почта</th>
+                                <th>Цель</th>
+                                <th>Сообщение</th>
+                                <th></th>
+                            </tr>
+                            </tfoot>
+                        </table>
 
 
 
+<div class="container"
+                        {{ $table->links("pagination::bootstrap-4") }}
 
 
-
-                    </div>
+                </div>
                 </div>
             </div>
         </div>
     </div>
+
+
 </div>
