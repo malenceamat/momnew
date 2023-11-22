@@ -1,4 +1,3 @@
-
 @extends('admin')
 @include('style')
 
@@ -7,7 +6,6 @@
 <div class="main-container" id="container">
     @include('admin.sidebar')
     <div id="content" class="main-content">
-
         <div class="layout-px-spacing">
             <div class="row layout-top-spacing" id="cancel-row">
                 <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
@@ -17,7 +15,6 @@
                             <tr>
                                 <th>id</th>
                                 <th>Image</th>
-
                                 <th>Text</th>
                                 <th>Supp Text</th>
                                 <th>Buttons</th>
@@ -44,7 +41,6 @@
                                             <button class="btn btn-danger mb-2">Delete</button>
                                         </form>
                                         <form method="POST" action="/edit/{{$data->id}}">
-
                                             {{csrf_field()}}
                                             <button class="btn btn-primary mb-2">Edit</button>
                                         </form>

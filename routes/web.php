@@ -14,10 +14,7 @@ Route::get('/', [GalleryRazdelcontroller::class, 'osnova1']);
 Route::get('/tablica', function () {
     return view('tablica');
 });
-
-
 Route::get('/svyaz',[RegistrationController::class, 'index']);
-
 Route::get('/editvideo', function () {
     return view('videoedit');
 });
@@ -27,9 +24,6 @@ Route::get('/galleryedit', function () {
 Route::get('/createslide', [GalleryRazdelcontroller::class, 'formcr']);
 Route::get('/redrazdel', function () {
     return view('redrazdel');
-});
-Route::get('/createimage', function () {
-    return view('createimage');
 });
 Route::get('/createrazdel', function () {
     return view('createrazdel');
@@ -64,19 +58,25 @@ Route::delete('/redrazdel/{delete}',[RazdelController::class, 'delete1']);
 Route::post('createslide', [GalleryRazdelController::class, 'sova']);
 Route::get('/allimage', [GalleryRazdelcontroller::class, 'poezd']);
 Route::delete('/allimage/{delete}',[GalleryRazdelcontroller::class, 'srem']);
-
-
 Route::post('/svyaz', [RegistrationController::class, 'input']);
-
 Route::get('/reg',[RegistrationController::class, 'table']);
 Route::get('/hueta', [RegistrationController::class, 'index2']);
 Route::delete('/reg/{delete}',[RegistrationController::class, 'delete']);
 Route::get('autocomplete', [RegistrationController::class, 'autocomplete'])->name('autocomplete');
+Route::get('/search', [RegistrationController::class, 'search']);
+Route::post('/reg{create}',[RegisterUserController::class, 'create']);
+Route::post('/client/{update}', [RegisterUserController::class, 'index']);
+Route::post('client', [RegisterUserController::class, 'update']);
+Route::delete('/client/{delete}', [DeleteController::class, 'delete']);
 
-Route::post('/client/{update}',[RegisterUserController::class, 'index']);
-Route::post('client',[RegisterUserController::class, 'update']);
-Route::delete('/client/{delete}',[DeleteController::class, 'delete']);
+
+
+
+
+
+
+
+
 
 require __DIR__.'/auth.php';
-
 

@@ -38,12 +38,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
-
                                     <div class="info">
                                         <h5 class="">Message</h5>
                                         <div class="row">
@@ -57,9 +55,6 @@
                                 </div>
                             </form>
                         </div>
-
-
-
                         <div class="as-footer-container">
                             <form method="POST" action="">
                                 @csrf

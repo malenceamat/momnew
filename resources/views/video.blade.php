@@ -1,6 +1,6 @@
 @extends('admin')
 @include('style')
-@include('admin.sidebar')
+
 
 
 
@@ -8,6 +8,7 @@
 
 
 <div class="main-container" id="container">
+    @include('admin.sidebar')
     <div id="content" class="main-content">
         <div class="layout-px-spacing">
             <div class="row layout-top-spacing" id="cancel-row">
