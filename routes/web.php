@@ -9,6 +9,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\RazdelController;
 use App\Http\Controllers\GalleryRazdelController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\RegisterUserController;
 Route::get('/', [GalleryRazdelcontroller::class, 'osnova1']);
 Route::get('/tablica', function () {
     return view('tablica');
@@ -33,8 +34,8 @@ Route::get('/createimage', function () {
 Route::get('/createrazdel', function () {
     return view('createrazdel');
 });
-Route::get('/admin', function () {
-    return view('admin');
+Route::get('/dashboard', function () {
+    return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 Route::post('/slider', [PostController::class, 'Submit']);
 Route::get('/admin', function () {return view('contentadmin.contentadmin');});
@@ -71,6 +72,11 @@ Route::get('/reg',[RegistrationController::class, 'table']);
 Route::get('/hueta', [RegistrationController::class, 'index2']);
 Route::delete('/reg/{delete}',[RegistrationController::class, 'delete']);
 Route::get('autocomplete', [RegistrationController::class, 'autocomplete'])->name('autocomplete');
+
+Route::post('/client/{update}',[RegisterUserController::class, 'index']);
+Route::post('client',[RegisterUserController::class, 'update']);
+Route::delete('/client/{delete}',[DeleteController::class, 'delete']);
+
 require __DIR__.'/auth.php';
 
 

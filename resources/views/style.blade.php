@@ -114,4 +114,20 @@ width: 19rem;
 margin:20px;
 box-shadow: 4px 6px 10px -3px #bfc9d4;
 }
+
+
+    .cell {
+        max-width: 50px; /* tweak me please */
+        white-space : nowrap;
+        overflow : hidden;
+    }
+
+    .expand-small-on-hover:hover {
+        max-width : 50px;
+        text-overflow: ellipsis;
+    }
+
+    .expand-maximum-on-hover:hover {
+        max-width : initial;
+    }
 </style>

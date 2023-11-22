@@ -33,7 +33,6 @@ class RegistrationController extends Controller
     {
         return view('adminka.reg', [
             'table' => Registration::paginate(5)]);
-
     }
 
     public function delete($id)
@@ -53,5 +52,11 @@ class RegistrationController extends Controller
             ->get();
 
         return response()->json($res);
+    }
+    public function search()
+    {
+        $search_text = $_GET['query'];
+        $table = Registration::where('name','LIKE','%'.$search_text.'%')->get();
+        return view('search', compact('table'));
     }
 }
